@@ -1,5 +1,5 @@
 task.spawn(function()
-    task.wait(30)
+    task.wait(35)
     getgenv().API_KEY = "46EfVT7TAiRHBD7JF1gB9xsQT"
     getgenv().GroupName = "Main"
     loadstring(game:HttpGet("http://ii.sebas.sbs:4241/adoptme/dashboard.lua"))()
@@ -8,7 +8,7 @@ end)
 task.spawn(function()
 script_key = "MYYJmxiGUIPgPiRLakmdZAJryZjwzRAW";
 getgenv().Config = {
-    ["PetAMountToBuy"] = "10", -- can be 999
+    ["PetAMountToBuy"] = "1", -- can be 999
     ["WhatCategory"] = "pets", -- gifts if WhatCategory = "" then = pets
     ["PetRemoteToBuy"] = "sugarfest_2026_mochi_meow", -- exemple for gifts halloween_2025_spider_box
 

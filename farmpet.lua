@@ -1,11 +1,12 @@
 task.spawn(function()
-    task.wait(35)
+    task.wait(50)
     getgenv().API_KEY = "46EfVT7TAiRHBD7JF1gB9xsQT"
     getgenv().GroupName = "Main"
     loadstring(game:HttpGet("http://ii.sebas.sbs:4241/adoptme/dashboard.lua"))()
 end)
 
 task.spawn(function()
+    task.wait(30)
     script_key = "MYYJmxiGUIPgPiRLakmdZAJryZjwzRAW";
     getgenv().Config = {
         ["PetAMountToBuy"] = "20", -- can be 999
@@ -75,7 +76,6 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    task.wait(60)
     getgenv().Config = {
         ["inventory"] = "pets",
         ["usernames"] = {"ihyaem1", "ihyaem2", "ihyaem3", "ihyaem4", "ihyaem5", "ihyaem6"}, -- Boucle sur ces pseudos

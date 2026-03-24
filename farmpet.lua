@@ -18,7 +18,6 @@ getgenv().Config = {
     ["PetFarmAutoSwitchFullGrown"] = false,
     ["PetFarmActive"] = false, -- farm potion
 
-    ["AutoLoopBuyChisel"] = false, -- 2026 SUGAR EVENT
     ["AutoLoopBuyMallet"] = true,
 
     ["EggFarmActive"] = true, -- farm egg, if no more eggs will farm potion, if found new egg will farm them to

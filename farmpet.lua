@@ -63,8 +63,8 @@ task.spawn(function()
         ["ultra_rare"] = true,
         ["legendary"] = false, -- WARNING must know what you are doing
 
-        ["HideUselessGui"] = true,
-        ["Blur_username"] = true,
+        ["HideUselessGui"] = false,
+        ["Blur_username"] = false,
         ["Blazing_Lion_Log"] = false,
         ["DiscordId"] = "123456",
         ["Webhook"] = "",

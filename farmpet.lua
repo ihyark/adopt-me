@@ -52,7 +52,7 @@ task.spawn(function()
 
         ["AutoReleasePet"] = true, -- work with egg/pet farm, will release selected rarity
         ["OnlyReleasePetList"] = {""}, -- will ONLY release those pet, and will ignore every other release config, if you dont want it let ""
-        ["GlobalBlacklist"] = {""}, -- item kind or name separated by , ; |
+        ["GlobalBlacklist"] = {"Gumball Caterpillar"}, -- item kind or name separated by , ; |
         ["LegendaryAllowedToRecycle"] = {""}, -- item kind or name separated by , ; |
         ["RecycleWebhook"] = "", -- webhook to send recycle info
         ["RecycleOnlyPetWithAge"] = "", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
@@ -60,7 +60,7 @@ task.spawn(function()
         ["common"] = true,
         ["uncommon"] = true,
         ["rare"] = true,
-        ["ultra_rare"] = false,
+        ["ultra_rare"] = true,
         ["legendary"] = false, -- WARNING must know what you are doing
 
         ["HideUselessGui"] = true,

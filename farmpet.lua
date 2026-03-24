@@ -8,9 +8,9 @@ end)
 task.spawn(function()
     script_key = "MYYJmxiGUIPgPiRLakmdZAJryZjwzRAW";
     getgenv().Config = {
-        ["PetAMountToBuy"] = "1", -- can be 999
+        ["PetAMountToBuy"] = "20", -- can be 999
         ["WhatCategory"] = "pets", -- gifts if WhatCategory = "" then = pets
-        ["PetRemoteToBuy"] = "sugarfest_2026_mochi_meow", -- exemple for gifts halloween_2025_spider_box
+        ["PetRemoteToBuy"] = "endangered_2026_endangered_egg", -- exemple for gifts halloween_2025_spider_box
 
         ["check_for_2d_kitty"] = true, -- farm 2d kitty event work with eggfarm or petfarm
 

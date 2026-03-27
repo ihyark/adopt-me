@@ -83,8 +83,3 @@ task.spawn(function()
     }
     loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_multi"))()
 end)
-
-task.spawn(function()
-    task.wait(60)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHA/Scripts/refs/heads/main/FPS%20Boost.luau"))()
-end)

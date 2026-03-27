@@ -1,5 +1,5 @@
 task.spawn(function()
-    task.wait(50)
+    task.wait(45)
     getgenv().API_KEY = "46EfVT7TAiRHBD7JF1gB9xsQT"
     getgenv().GroupName = "Main"
     loadstring(game:HttpGet("http://ii.sebas.sbs:4241/adoptme/dashboard.lua"))()
@@ -82,4 +82,9 @@ task.spawn(function()
         ["pets_to_trade"] = {"penguins_2025_dango_penguins", "pet_recycler_2025_crystal_egg", "sugarfest_2026_gumball_caterpillar", " food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}
     }
     loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_multi"))()
+end)
+
+task.spawn(function()
+    task.wait(60)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHA/Scripts/refs/heads/main/FPS%20Boost.luau"))()
 end)

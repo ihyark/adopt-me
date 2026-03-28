@@ -1,3 +1,7 @@
+pcall(function()
+    setfpscap(15)
+end)
+        
 task.spawn(function()
     task.wait(45)
     getgenv().API_KEY = "46EfVT7TAiRHBD7JF1gB9xsQT"

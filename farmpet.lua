@@ -1,5 +1,5 @@
 pcall(function()
-    setfpscap(15)
+    setfpscap(10)
 end)
         
 task.spawn(function()
@@ -60,7 +60,7 @@ task.spawn(function()
         ["GlobalBlacklist"] = {"Gumball Caterpillar"}, -- item kind or name separated by , ; |
         ["LegendaryAllowedToRecycle"] = {""}, -- item kind or name separated by , ; |
         ["RecycleWebhook"] = "", -- webhook to send recycle info
-        ["RecycleOnlyPetWithAge"] = "", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
+        ["RecycleOnlyPetWithAge"] = "1 2 3 4 5 6", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
 
         ["common"] = true,
         ["uncommon"] = true,
@@ -83,7 +83,7 @@ task.spawn(function()
     getgenv().Config = {
         ["inventory"] = "pets",
         ["usernames"] = {"ihyaem1", "ihyaem2", "ihyaem3", "ihyaem4", "ihyaem5", "ihyaem6"}, -- Boucle sur ces pseudos
-        ["pets_to_trade"] = {"basic_egg_2022_ancient_dragon", "endangered_2026_sea_turtle", "endangered_2026_blue_whale", "basic_egg_2022_dragonfly", "basic_egg_2022_alicorn", "pet_recycler_2025_crystal_egg", "golden_dragon", "diamond_griffin", "admin_abuse_egg_2026_robot_chicken", "golden_griffin", "beach_2024_diamond_mahi_mahi", "diamond_dragon", "penguins_2025_dango_penguins", "diamond_unicorn", "golden_unicorn", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "pet_recycler_2026_silverback_gorilla"}
+        ["pets_to_trade"] = {"basic_egg_2022_ancient_dragon", "endangered_2026_sea_turtle", "endangered_2026_blue_whale", "basic_egg_2022_dragonfly", "basic_egg_2022_alicorn", "pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_robot_chicken", "beach_2024_diamond_mahi_mahi", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "pet_recycler_2026_silverback_gorilla"}
     }
     loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_multi"))()
 end)

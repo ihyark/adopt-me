@@ -13,9 +13,9 @@ task.spawn(function()
     task.wait(30)
     script_key = "MYYJmxiGUIPgPiRLakmdZAJryZjwzRAW";
     getgenv().Config = {
-        ["PetAMountToBuy"] = "20", -- can be 999
+        ["PetAMountToBuy"] = "1", -- can be 999
         ["WhatCategory"] = "pets", -- gifts if WhatCategory = "" then = pets
-        ["PetRemoteToBuy"] = "endangered_2026_endangered_egg", -- exemple for gifts halloween_2025_spider_box
+        ["PetRemoteToBuy"] = "Mochi Meow", -- exemple for gifts halloween_2025_spider_box
 
         ["check_for_2d_kitty"] = true, -- farm 2d kitty event work with eggfarm or petfarm
 
@@ -28,7 +28,7 @@ task.spawn(function()
         ["EggFarmActive"] = true, -- farm egg, if no more eggs will farm potion, if found new egg will farm them to
         ["EggToIgnore"] = {"Crystal Egg"}, -- eggs to ignore when eggfarm active
         ["LoopBuyEgg"] = true, -- when enough bucks will buy egg, only work with eggfarm
-        ["EggToBuyEgg"] = "endangered_2026_endangered_egg",
+        ["EggToBuyEgg"] = "Endangered Egg",
 
 
         ["PetPenActive"] = true, -- will put pets in pen, random pets

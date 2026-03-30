@@ -59,7 +59,7 @@ task.spawn(function()
         ["GlobalBlacklist"] = {"Gumball Caterpillar"}, -- item kind or name separated by , ; |
         ["LegendaryAllowedToRecycle"] = {""}, -- item kind or name separated by , ; |
         ["RecycleWebhook"] = "", -- webhook to send recycle info
-        ["RecycleOnlyPetWithAge"] = "1 2 3 4 5 6", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
+        ["RecycleOnlyPetWithAge"] = "", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
 
         ["common"] = true,
         ["uncommon"] = true,

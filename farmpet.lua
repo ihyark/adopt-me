@@ -5,7 +5,7 @@ task.spawn(function()
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "Main", -- Group name for organizing accounts on dashboard
         },
-	BabyFarm = true, -- Does baby farm
+	    BabyFarm = true, -- Does baby farm
             PetFarm = {
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
@@ -87,8 +87,8 @@ task.spawn(function()
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-getgenv().scriptkey="ADdTrOaADvQbzOVsAVtmcgOEXFeIYAYO"
-loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/Lite.lua"))()
+    getgenv().scriptkey="ADdTrOaADvQbzOVsAVtmcgOEXFeIYAYO"
+    loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/Lite.lua"))()
 end)
 
 task.spawn(function()

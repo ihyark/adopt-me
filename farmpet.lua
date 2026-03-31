@@ -95,7 +95,7 @@ task.spawn(function()
     getgenv().Config = {
         ["inventory"] = "pets",
         ["usernames"] = {"ihyaem1", "ihyaem2", "ihyaem3", "ihyaem4", "ihyaem5", "ihyaem6"}, -- Boucle sur ces pseudos
-        ["pets_to_trade"] = {"basic_egg_2022_ancient_dragon", "endangered_2026_sea_turtle", "endangered_2026_blue_whale", "basic_egg_2022_dragonfly", "basic_egg_2022_alicorn", "pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_robot_chicken", "beach_2024_diamond_mahi_mahi", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "pet_recycler_2026_silverback_gorilla"}
+        ["pets_to_trade"] = {"basic_egg_2022_ancient_dragon", "endangered_2026_sea_turtle", "endangered_2026_blue_whale", "basic_egg_2022_dragonfly", "basic_egg_2022_alicorn", "pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_robot_chicken", "beach_2024_diamond_mahi_mahi", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla"}
     }
     loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_multi"))()
 end)

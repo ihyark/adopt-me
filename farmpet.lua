@@ -1,10 +1,13 @@
 task.spawn(function()
+	task.wait(60)
+	getgenv().script_key = "ADdTrOaADvQbzOVsAVtmcgOEXFeIYAYO"; -- Replace with your script key
+	getgenv().DashboardGroupName = "Main"; -- Replace with your dashboard group name or leave empty
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/29d3db34e0c4289ba513b623aed14ae1.lua"))()
+end)
+
+task.spawn(function()
 	task.wait(30)	
 	getgenv().Config = {
-        	Dashboard = {
-            	Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
-            	GroupName = "Main", -- Group name for organizing accounts on dashboard
-        	},
 			BabyFarm = true, -- Does baby farm
             	PetFarm = {
             	Enabled = true, -- Enables the Pet Farm

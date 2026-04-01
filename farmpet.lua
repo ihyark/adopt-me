@@ -75,7 +75,7 @@
                 -- legendary = {},                   -- Only recycle mega legendaries
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "endangered_2026_blue_whale ", "endangered_2026_sea_turtle", "admin_abuse_egg_2026_robot_chicken", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "admin_abuse_egg_2026_robot_chicken", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling

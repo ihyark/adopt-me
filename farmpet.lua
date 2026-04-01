@@ -115,8 +115,8 @@
             Enabled = false, -- Send webhook notifications to Discord
             URL = "https://discord.com/api/", -- Discord webhook URL for notifications
             PetUnlock = {
-                Enabled = false, -- Send webhook when hatching/unlocking a pet
-                URL = "https://discord.com/api/webhooks/", -- Webhook URL for pet unlocks
+                Enabled = true, -- Send webhook when hatching/unlocking a pet
+                URL = "https://discord.com/api/webhooks/1474074467016773632/gQjRBOToQYsa9XOPC6e70wTBYgF0UF3y_BmPoc7DJOxeuR4NCj_OWIY8r17CqL3REMa7", -- Webhook URL for pet unlocks
                 FilterRarities = {"legendary"}, -- Only send for these rarities
             },
         },

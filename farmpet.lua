@@ -9,12 +9,12 @@
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {"pet_recycler_2025_crystal_egg", "endangered_2026_endangered_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
-            BuyEggType = "endangered_2026_endangered_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            EggTypes = {"pet_recycler_2025_crystal_egg", "cracked_egg", "endangered_2026_endangered_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            BuyEggType = "cracked_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
-            SelectiveFarm = true, -- If true, only farm pets in SelecatedPetTypes list
+            SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {"sugarfest_2026_mochi_meow"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         EventFarm = {
@@ -49,7 +49,7 @@
         },
         AutoBuy = {
             Enabled = true, -- Automatically buy items from shops
-            SelectedItems = {"pet_recycler_2025_crystal_egg", "endangered_2026_endangered_egg", "crystal_egg"}, -- Item IDs to buy
+            SelectedItems = {"pet_recycler_2025_crystal_egg", "cracked_egg"}, -- Item IDs to buy
             BuyAmounts = {}, -- How many of each item to buy. Example: {5, 10} buys 5 cracked_eggs and 10 sandwiches. Empty {} buys infinite of each item. If there are more items than amounts, remaining items default to infinite.
         },
         AutoPay = {
@@ -79,9 +79,9 @@
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling
-            SelectedPets = {"sugarfest_2026_mochi_meow"}, -- Pet IDs to put in pet pen (empty = use all)
+            SelectedPets = {"cracked_egg", "pet_recycler_2025_crystal_egg"}, -- Pet IDs to put in pet pen (empty = use all)
             ExcludedPets = {}, -- Pet IDs to never put in pet pen
-            PriorityOrder = {"neon"}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
+            PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
             PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions
         },
         AccountManager = {

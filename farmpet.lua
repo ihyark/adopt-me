@@ -1,4 +1,8 @@
- getgenv().Config = {
+pcall(function()
+    setfpscap(5)
+end)
+
+getgenv().Config = {
         Dashboard = {
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "Main", -- Group name for organizing accounts on dashboard

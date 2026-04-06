@@ -32,7 +32,7 @@ getgenv().Config = {
             Usernames = {"ihyaem7", "ihyaem2", "ihyaem3", "ihyaem4", "ihyaem5", "ihyaem6"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"admin_abuse_egg_2026_robot_chicken", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla", "sugarfest_2026_dark_choccybunny"}, -- Item IDs when TradeMode = "specific"
+            Items = {"admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla", "sugarfest_2026_dark_choccybunny"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {"500"}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             PetVersionFilter = {}, -- Per-pet version filter e.g. {turtle = {"mega"}, whale = {"neon"}, cat = {"regular"}} - if pet listed here only those versions trade, otherwise falls back to global PetTypes
@@ -79,7 +79,7 @@ getgenv().Config = {
                 -- legendary = {},                   -- Only recycle mega legendaries
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "admin_abuse_egg_2026_robot_chicken", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "sugarfest_2026_dark_choccybunny"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "sugarfest_2026_dark_choccybunny"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling

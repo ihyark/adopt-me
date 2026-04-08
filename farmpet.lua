@@ -13,7 +13,7 @@ getgenv().Config = {
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {"pet_recycler_2025_crystal_egg", "cracked_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            EggTypes = {"cracked_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "cracked_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
@@ -83,7 +83,7 @@ getgenv().Config = {
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling
-            SelectedPets = {"cracked_egg", "pet_recycler_2025_crystal_egg"}, -- Pet IDs to put in pet pen (empty = use all)
+            SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
             ExcludedPets = {}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
             PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions

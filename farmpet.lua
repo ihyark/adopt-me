@@ -80,7 +80,7 @@ getgenv().Config = {
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling
             SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
-            ExcludedPets = {}, -- Pet IDs to never put in pet pen
+            ExcludedPets = {"pet_recycler_2025_crystal_egg"}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
             PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions
         },

@@ -1,10 +1,11 @@
 getgenv().Config = {
         Dashboard = {
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
+            SyncConfig = true,    -- Accept config pushes from dashboard
             GroupName = "Main", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = true, -- Does baby farm
-        AutoCertificate = true, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
+        AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
@@ -68,11 +69,11 @@ getgenv().Config = {
                 -- If a rarity is not listed or empty, pets of that rarity will NOT be recycled
                 -- If a rarity has versions listed, ONLY those versions will be recycled
 
-                -- common = {"regular", "neon", "mega"},  -- Recycle all common versions
-                -- uncommon = {"neon"},                    -- Only recycle neon uncommons
-                -- rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
-                -- ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                -- legendary = {},                   -- Only recycle mega legendaries
+                common = {"regular", "neon", "mega"},  -- Recycle all common versions
+                uncommon = {"regular", "neon", "mega"},  -- Only recycle neon uncommons
+                rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
+                ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
+                legendary = {"regular"},                   -- Only recycle mega legendaries
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
             ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "pet_recycler_2025_emberlight", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}

@@ -10,8 +10,8 @@ getgenv().Config = {
             Enabled = true, -- Enables the Pet Farm
             FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggTypes = {"endangered_2026_endangered_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
-            BuyEggType = "endangered_2026_endangered_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            EggTypes = {"regular_pet_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
+            BuyEggType = "regular_pet_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
@@ -29,7 +29,7 @@ getgenv().Config = {
             Usernames = {"Echo2kWest3", "G777raysonSimZone", "Dash777Blocks", "IvyRBXArmy", "itsSage365Gecko", "LULU365BLox17", "SkylarWalker78", "Chloe19electricavawr", "izabellawre84n1712"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"pet_recycler_2025_crystal_egg", "pet_recycler_2025_emberlight", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla"}, -- Item IDs when TradeMode = "specific"
+            Items = {"pet_recycler_2025_crystal_egg", "pet_recycler_2025_emberlight", "pet_progression_2026_purrowl", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "penguins_2025_dango_penguins", "sugarfest_2026_gumball_caterpillar", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow", "endangered_2026_silverback_gorilla"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {"500"}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             PetVersionFilter = {}, -- Per-pet version filter e.g. {turtle = {"mega"}, whale = {"neon"}, cat = {"regular"}} - if pet listed here only those versions trade, otherwise falls back to global PetTypes
@@ -70,17 +70,17 @@ getgenv().Config = {
                 -- If a rarity has versions listed, ONLY those versions will be recycled
 
                 common = {"regular", "neon", "mega"},  -- Recycle all common versions
-                uncommon = {"regular", "neon", "mega"},  -- Only recycle neon uncommons
-                rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
-                ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
+                uncommon = {"neon", "mega"},  -- Only recycle neon uncommons
+                rare = {"neon", "mega"},     -- Recycle all rare versions
+                ultra_rare = {"neon", "mega"}, -- Recycle all ultra rare versions
                 legendary = {"regular"},                   -- Only recycle mega legendaries
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"sugarfest_2026_gumball_caterpillar", "pet_recycler_2025_emberlight", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {"sugarfest_2026_gumball_caterpillar","pet_progression_2026_purrowl", "pet_recycler_2025_emberlight", "admin_abuse_egg_2026_robot_chicken", "sugarfest_2026_easter_bunny", "endangered_2026_silverback_gorilla", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "sugarfest_2026_mochi_meow"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling
-            SelectedPets = {"endangered_2026_endangered_egg"}, -- Pet IDs to put in pet pen (empty = use all)
+            SelectedPets = {}, -- Pet IDs to put in pet pen (empty = use all)
             ExcludedPets = {}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
             PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions

@@ -37,9 +37,9 @@ getgenv().Config = {
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
         },
         AutoNeon = {
-            Enabled = false, -- Enable auto neon/mega fusion
-            MakeMega = false, -- Fuse neons into mega neons
-            NeonAll = false, -- Neon everything possible
+            Enabled = true, -- Enable auto neon/mega fusion
+            MakeMega = true, -- Fuse neons into mega neons
+            NeonAll = true, -- Neon everything possible
             SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
         },

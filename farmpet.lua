@@ -4,10 +4,10 @@
             SyncConfig = false,    -- Accept config pushes from dashboard
             GroupName = "AGE POT",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
-        BabyFarm = true, -- Does baby farm
+        BabyFarm = false, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
@@ -22,10 +22,10 @@
             Enabled = true, -- Enable auto trading
             AutoAcceptTrades = true, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {"ihy4rk"}, -- Players to send trades to (e.g. {"player1", "player2"})
+            Usernames = {"Echo2kWest3", "G777raysonSimZone", "Dash777Blocks", "IvyRBXArmy", "itsSage365Gecko", "LULU365BLox17", "SkylarWalker78", "Chloe19electricavawr", "izabellawre84n1712"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"ice_dimension_2025_frostbite_bear"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Items = {"ice_dimension_2025_frostbite_bear", "admin_abuse_egg_2026_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters

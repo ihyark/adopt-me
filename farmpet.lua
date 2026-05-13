@@ -8,8 +8,8 @@
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {"cracked_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "cracked_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
@@ -84,14 +84,14 @@
                 -- If a rarity is not listed or empty, pets of that rarity will NOT be recycled
                 -- If a rarity has versions listed, ONLY those versions will be recycled
 
-                -- common = {"regular", "neon", "mega"},  -- Recycle all common versions
-                -- uncommon = {"neon"},                    -- Only recycle neon uncommons
-                -- rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
-                -- ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                -- legendary = {"mega"},                   -- Only recycle mega legendaries
+                common = {"regular", "neon", "mega"},  -- Recycle all common versions
+                uncommon = {"regular", "neon", "mega"},                    -- Only recycle neon uncommons
+                rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
+                ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
+                legendary = {"mega"},                   -- Only recycle mega legendaries
             },
-            AgeFilter = {"2"}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"basic_egg_2022_alicorn", "basic_egg_2022_dragonfly", "basic_egg_2022_ancient_dragon", "ice_dimension_2025_frostbite_bear"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
+            ExcludedPets = {"basic_egg_2022_alicorn", "basic_egg_2022_dragonfly", "basic_egg_2022_ancient_dragon", "ice_dimension_2025_frostbite_bear", "lss_2026_glormy_crab", "pet_recycler_2025_emberlight", "pet_progression_2026_purrowl", "admin_abuse_egg_2026_robot_chicken", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "endangered_2026_silverback_gorilla", "admin_abuse_2025_sushi_penguin"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling

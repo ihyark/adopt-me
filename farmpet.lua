@@ -15,8 +15,8 @@
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
-            SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
-            SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
+            SelectiveFarm = true, -- If true, only farm pets in SelecatedPetTypes list
+            SelectedPetTypes = {"basic_egg_2022_alicorn", "basic_egg_2022_dragonfly", "basic_egg_2022_ancient_dragon"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
             Enabled = true, -- Enable auto trading

@@ -88,10 +88,10 @@
                 uncommon = {"regular", "neon", "mega"},                    -- Only recycle neon uncommons
                 rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
                 ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                legendary = {"mega"},                   -- Only recycle mega legendaries
+                legendary = {"regular"},                   -- Only recycle mega legendaries
             },
             AgeFilter = {}, -- Empty = all ages, or specific ages e.g. {1, 2, 3, 4, 5, 6} (1=Newborn, 6=Full Grown)
-            ExcludedPets = {"basic_egg_2022_alicorn", "basic_egg_2022_dragonfly", "basic_egg_2022_ancient_dragon", "ice_dimension_2025_frostbite_bear", "lss_2026_glormy_crab", "pet_recycler_2025_emberlight", "pet_progression_2026_purrowl", "admin_abuse_egg_2026_robot_chicken", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "endangered_2026_silverback_gorilla", "admin_abuse_2025_sushi_penguin"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
+            ExcludedPets = {"basic_egg_2022_alicorn", "ice_dimension_2025_frostbite_bear", "lss_2026_glormy_crab", "pet_recycler_2025_emberlight", "pet_progression_2026_purrowl", "admin_abuse_egg_2026_robot_chicken", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "endangered_2026_silverback_gorilla", "admin_abuse_2025_sushi_penguin"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
             Enabled = true, -- Put pets in pet pen for idle leveling

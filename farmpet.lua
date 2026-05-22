@@ -1,19 +1,19 @@
    getgenv().Config = {
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
-            SyncConfig = true,    -- Accept config pushes from dashboard
+            SyncConfig = false,    -- Accept config pushes from dashboard
             GroupName = "FARMEGG",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
-        BabyFarm = true, -- Does baby farm
+        BabyFarm = false, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
-            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            Enabled = false, -- Enables the Pet Farm
+            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {"cracked_egg"}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "cracked_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
-            FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
+            FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {"basic_egg_2022_alicorn", "basic_egg_2022_dragonfly", "basic_egg_2022_ancient_dragon"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
@@ -22,10 +22,10 @@
             Enabled = true, -- Enable auto trading
             AutoAcceptTrades = true, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {}, -- Players to send trades to (e.g. {"player1", "player2"})
+            Usernames = {"G777raysonSimZone", "Dash777Blocks", "IvyRBXArmy", "itsSage365Gecko", "LULU365BLox17", "SkylarWalker78", "Chloe19electricavawr", "izabellawre84n1712"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"ice_dimension_2025_frostbite_bear", "admin_abuse_egg_2026_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Items = {"ice_dimension_2025_frostbite_bear", "admin_abuse_egg_2026_egg", "pet_recycler_2025_crystal_egg", "basic_egg_2022_alicorn", "pet_progression_2026_purrowl", "admin_abuse_2025_sushi_penguin"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters
@@ -94,7 +94,7 @@
             ExcludedPets = {"basic_egg_2022_alicorn", "ice_dimension_2025_frostbite_bear", "lss_2026_glormy_crab", "pet_recycler_2025_emberlight", "pet_progression_2026_purrowl", "admin_abuse_egg_2026_robot_chicken", "penguins_2025_dango_penguins", "food_pets_2026_dragonfruit_fox", "endangered_2026_silverback_gorilla", "admin_abuse_2025_sushi_penguin"}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
-            Enabled = true, -- Put pets in pet pen for idle leveling
+            Enabled = false, -- Put pets in pet pen for idle leveling
             SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
             ExcludedPets = {"pet_recycler_2025_crystal_egg"}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})

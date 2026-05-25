@@ -13,7 +13,7 @@ getgenv().PetSimulator99 = {
     UseLootbox = {"Hype Egg 2", "Slime Gift"},
     OpenGiftBags = true,
 
-    EquipEnchants = {"Tap Power","Tap Power","Criticals","Strong Pets"},
+    EquipEnchants = {"Tap Power","Tap Power","Criticals","Strong Pets","Tap Power","Tap Power","Tap Power","Tap Power","Coins"},
     UsePotions = {"Damage", "Coins", "Lucky", "Treasure Hunter"},
 
     MailConfig = {

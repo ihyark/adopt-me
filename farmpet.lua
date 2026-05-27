@@ -34,7 +34,7 @@ getgenv().PetSimulator99 = {
     Fps = 0,
 
     --event
-    UseDice = {"Lucky Dice V2", "Lucky Dice II V2", "Mega Lucky Dice V2", "Mega Lucky Dice II V2"},
+    UseDice = {"Lucky Dice V2", "Lucky Dice II V2", "Mega Lucky Dice V2", "Mega Lucky Dice II V2", "Fire Dice V2"},
     RngUpgrades = {
         RNGHugeLuck = {MaxTier = 999},
         RNGEggLuck = {MaxTier = 999},
@@ -47,7 +47,6 @@ getgenv().PetSimulator99 = {
         "Lucky Dice III V2",
         "Mega Lucky Dice V2",
         "Mega Lucky Dice II V2",
-        "Fire Dice V2",
     },
     CraftDiceAmount = "Max", -- can 1,2,3... 
     KeepPets = 15, --if u have huges u can 1

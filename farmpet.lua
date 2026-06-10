@@ -20,12 +20,12 @@ getgenv().Config =  {
     ["Auto Enchant"] = {"Treasure Hunter", "Treasure Hunter", "Diamonds", "Diamonds","Criticals", "Strong Pets"},
     ["CPU Saver"] = false, -- makes your game run smoother
 
-    ["MaxEggSlots"] = 50,
-    ["MaxPetSlots"] = 40,
+    ["MaxEggSlots"] = 86,
+    ["MaxPetSlots"] = 84,
 
     ["Progress Limits"] = {
-        ["Max Rank"] = false,
-        ["Max Area"] = false,
+        ["Max Rank"] = true,
+        ["Max Area"] = true,
     },
     ["Ignore Do Ranks"] = false, 
     ["Fast Rankup"] = false, -- will focus on quest in world 1 until it reaches a specific rank (broken a bit)

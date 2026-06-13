@@ -66,7 +66,7 @@
         Settings = {
             ShowOverlay = true; -- show in-game overlay with stats and info
             AutoCenter = false; -- Puts your character in the center of your plot repeatedly
-            FPSCap = 144; -- set fps cap
+            FPSCap = 10; -- set fps cap
         };
     };
 getgenv().scriptkey="pItekpTueNoKljDhicKRIqdJFsoZfYcK"

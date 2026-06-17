@@ -44,19 +44,19 @@ getgenv().GAG2Config = {
         ["Tulip"]           = 9999,        
         ["Blueberry"]       =    1,
         ["Strawberry"]      =    1,
-	["Carrot"]          =   10,
-	["Green Bean"]      =  200,
+		["Carrot"]          =   10,
+		["Green Bean"]      =  200,
     },
 
     ["Harvest Only If Mutated"] = {
-	"Bamboo",
+		"Bamboo",
     	"Mushroom",
     },
     ["Favourite Fruit"]         = {},
     ["Sell Delay"]              = 20,
     ["Auto Bargain"]            = true,
     ["Expand Plot"]             = true,
-    ["Plant Cap"]               = 250,  -- 0 = unlimited
+    ["Plant Cap"]               = 125,  -- 0 = unlimited
     ["Stop Money Cap"]          = 40000000,
     ["Gears To Use"] = {
         ["Common Sprinkler"]    = 4,
@@ -77,11 +77,11 @@ getgenv().GAG2Config = {
 
     -- mailing
     ["Mail To Username"] = {
-	"ihy4rk",
+		"ihy4rk",
     },
     ["Mail Items"]       = {
-	["BlackDragon"]     = 100,
-   	["GoldenDragonfly"] = 100,
+		["BlackDragon"]     = 100,
+   		["GoldenDragonfly"] = 100,
     	["Unicorn"]         = 100,
     	["Raccoon"]         = 100,
     	["IceSerpent"]      = 100,

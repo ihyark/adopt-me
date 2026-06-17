@@ -1,73 +1,105 @@
- getgenv().Config = {
-        Dashboard = {
-            Enabled = true; -- Enable dashboard features (live stats, etc)
-            SyncConfig = true; -- Allow the dashboard to update config in real-time
-            GroupName = "GAG2"; -- Group name for organising bots (https://zekehub.com/dashboard/gag2)
-        };
-        AutoHarvest = {
-            Enabled = true; -- Harvest ready fruit/plants
-            IgnoreMutated = false; -- Skip harvesting fruit with mutations
-            IgnoredMutations = {}; -- Mutation names to skip (e.g. {"Gold", "Rainbow"}, {} = skip all when IgnoreMutated on)
-            IgnoreByWeight = false; -- Skip harvesting fruit under a min weight
-            MinIgnoreWeight = 0; -- Minimum weight [KG] to ignore when IgnoreByWeight on
-        };
-        AutoPlant = {
-            Enabled = true; -- Plant seeds from inventory
-            Mode = "All"; -- "All" = plant any seed, "Selected" = only Plants list
-            Plants = {}; -- Seed names to plant when Mode = "Selected" (e.g. {"Carrot", "Strawberry"})
-            Ignore = {"Rainbow", "Gold", "Strawberry", "Blueberry", "Moon Bloom", "Dragon's Breath"}; -- Seed names to NEVER plant, applies in any mode (e.g. {"Rainbow", "Beanstalk"})
-        };
-        AutoBuySeeds = {
-            Enabled = true, -- Buy seeds from the seed shop
-            Mode = "All"; -- "All" = buy any in-stock seed, "Selected" = only Seeds list
-            Seeds = {}; -- Seed names to buy when Mode = "Selected"
-        };
-        AutoBuyGears = {
-            Enabled = false; -- Buy gears from the gear shop
-            Mode = "All"; -- "All" = buy any in-stock gear, "Selected" = only Gears list
-            Gears = {}; -- Gear names to buy when Mode = "Selected" (e.g. {"Watering Can"})
-        };
-        AutoBuySlot = {
-            Enabled = false; -- Auto buy garden plot expansions when affordable
-        };
-        AutoBuyPets = {
-            Enabled = false; -- Tame/buy wild pets that spawn
-            Pets = {}; -- Pet names/keys to buy (e.g. {"Dog", "Cat"})
-        };
-        AutoEventSeeds = {
-            Enabled = false; -- Collect event seed spawns (gold/rainbow)
-            Types = {}; -- Seed types to collect (e.g. {"Gold", "Rainbow"})
-        };
-        WipePlot = {
-            Enabled = false; -- Shovel/remove selected plants from your plot
-            Plants = {}; -- Seed names to wipe (e.g. {"Carrot"})
-        };
-        AutoFavorite = {
-            Enabled = false; -- Auto favorite fruit matching checks
-            Checks = {}; -- Which checks to use (e.g. {"Weight", "Mutation", "Sell Price"})
-            Mutations = {}; -- Mutations to favorite when Mutation check on ({} or {"Any"} = any mutation)
-            MinWeight = 100; -- Min weight [KG] when Weight check on
-            MinSellPrice = 1000; -- Min sell price [$] when Sell Price check on
-        };
-        AutoSell = {
-            Enabled = false; -- Auto sell fruit
-            Mode = "Inventory"; -- "Inventory" = sell all (minus favorites/blacklist), "Selected" = only Fruits list
-            Fruits = {}; -- Fruit names to sell when Mode = "Selected" (e.g. {"Carrot"})
-            BlacklistChecks = {}; -- Protect-from-sell checks (e.g. {"Weight", "Mutation", "Sell Price"})
-            BlacklistMutations = {}; -- Mutations to protect ({} or {"Any"} = any mutation)
-            BlacklistMinWeight = 100; -- Min weight [KG] to protect when Weight blacklist check on
-            BlacklistMinSellPrice = 1000; -- Min sell price [$] to protect when Sell Price blacklist check on
-        };
-        AutoMail = {
-            Enabled = false; -- Mail items to one or more usernames
-            ClaimMail = false; -- Auto claim incoming mail rewards
-            Recipients = {}; -- list of { Username = "player1"; Items = {"Seed: Carrot"}; ItemCounts = {10}; }
-        };
-        Settings = {
-            ShowOverlay = true; -- show in-game overlay with stats and info
-            AutoCenter = false; -- Puts your character in the center of your plot repeatedly
-            FPSCap = 10; -- set fps cap
-        };
-    };
-getgenv().scriptkey="pItekpTueNoKljDhicKRIqdJFsoZfYcK"
-loadstring(game:HttpGet("https://zekehub.com/scripts/GAG2/Main.lua"))()
+script_key = "rMEyROTrWwDmcTVVGBqungItSeMHbEBs"   -- drop your Luarmor key in here
+
+getgenv().GAG2Config = {
+    ["FPS Cap"] = 10,
+
+    ["Pets To Buy"] = {  -- name = how many
+        ["BlackDragon"]     = 99,
+        ["GoldenDragonfly"] = 99,
+        ["Unicorn"]         = 99,
+        ["Raccoon"]         = 99,
+        ["IceSerpent"]      = 99,
+        ["Robin"]           =  3,
+        ["Deer"]            =  2,
+    },
+    ["Pets To Equip"] = {  -- { name, slots, order }
+        { "Unicorn",          5, 1 },
+        { "GoldenDragonfly", 10, 2 },
+        { "Robin",            3, 3 },
+        { "Deer",             2, 4 },
+    },
+
+    ["Seeds To Plant"] = {  -- name = how many to grow
+        ["Carrot"]          =  10,
+        ["Strawberry"]      =   1,
+        ["Blueberry"]       =   1,
+        ["Tulip"]           =  20,       
+        ["Bamboo"]          = 200,    
+        ["Mushroom"]        = 200,
+        ["Green Bean"]      = 200,       
+        ["Sunflower"]       =  50,
+        ["Venus Fly Trap"]  =  50,
+        ["Pomegranate"]     =  50,
+        ["Poison Apple"]    =  50,    
+    },
+    ["Seeds To Buy"] = {  -- name = how many to keep stocked
+        ["Moon Bloom"]      = 9999,
+        ["Dragon's Breath"] = 9999,
+        ["Mushroom"]        = 9999,
+        ["Venus Fly Trap"]  = 9999,
+        ["Sunflower"]       = 9999,
+        ["Bamboo"]          = 9999,
+        ["Pomegranate"]     = 9999,        
+        ["Poison Apple"]    = 9999,        
+        ["Tulip"]           = 9999,        
+        ["Blueberry"]       =    1,
+        ["Strawberry"]      =    1,
+	["Carrot"]          =   10,
+	["Green Bean"]      =  200,
+    },
+
+    ["Harvest Only If Mutated"] = {
+	"Bamboo",
+    	"Mushroom",
+    },
+    ["Favourite Fruit"]         = {},
+    ["Sell Delay"]              = 20,
+    ["Auto Bargain"]            = true,
+    ["Expand Plot"]             = true,
+    ["Plant Cap"]               = 250,  -- 0 = unlimited
+    ["Stop Money Cap"]          = 40000000,
+    ["Gears To Use"] = {
+        ["Common Sprinkler"]    = 4,
+        ["Rare Sprinkler"]      = 2,
+        ["Super Sprinkler"]     = 2,
+        ["Common Watering Can"] = 5,
+    },
+    ["Sprinklers To Use"] = {  -- best-first
+        "Super Sprinkler",
+        "Legendary Sprinkler",
+        "Rare Sprinkler",
+        "Common Sprinkler",
+    },
+    ["Watering Cans To Use"] = {  -- best-first; empty to disable
+        "Super Watering Can",
+        "Common Watering Can",
+    },
+
+    -- mailing
+    ["Mail To Username"] = {
+	"ihy4rk",
+    },
+    ["Mail Items"]       = {
+	["BlackDragon"]     = 100,
+   	["GoldenDragonfly"] = 100,
+    	["Unicorn"]         = 100,
+    	["Raccoon"]         = 100,
+    	["IceSerpent"]      = 100,
+    	["Moon Bloom"]      = 100,
+    	["Dragon's Breath"] = 100,
+    	["Rainbow"]         = 100,
+    },  
+    ["Collect Mail"]     = true,
+
+    -- discord
+    ["Webhook Pet Names"]      = {},  -- blank = every pet
+    ["Webhook Pet Rarities"]   = { "Mythic", "Super", "Secret" },
+    ["Webhook URL"]            = "https://discord.com/api/webhooks/1516089179396640969/1e6rcwJJtoZfuHdwCz0fDp_nAD-mDCowbA7k3qKnojwyMvK4AXJWGTPGyhxzyAjriGaq",
+    ["Discord ID"]             = "",
+    ["Webhook Note"]           = "",
+    ["Show Public Discord ID"] = false,  -- public ping only (name/JobId never posted publicly)
+    ["Show Webhook Username"]  = true,
+    ["Show Webhook JobId"]     = false,
+}
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ac1a4db4a5a88c65086dd5891742e237.lua"))()

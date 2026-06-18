@@ -55,8 +55,8 @@ getgenv().GAG2Config = {
     ["Favourite Fruit"]         = {},
     ["Sell Delay"]              = 20,
     ["Auto Bargain"]            = true,
-    ["Expand Plot"]             = true,
-    ["Plant Cap"]               = 125,  -- 0 = unlimited
+    ["Expand Plot"]             = false,
+    ["Plant Cap"]               = 150,  -- 0 = unlimited
     ["Stop Money Cap"]          = 40000000,
     ["Gears To Use"] = {
         ["Common Sprinkler"]    = 4,

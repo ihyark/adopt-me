@@ -1,105 +1,53 @@
-script_key = "rMEyROTrWwDmcTVVGBqungItSeMHbEBs"   -- drop your Luarmor key in here
+script_key="rZCWOzijiqdqkuEEwrZpzeuGJiOwMdzz";
+getgenv().Config =  {
+    ["Webhook"] = {
+        ["URL"] = "",
+        ["Discord Id to ping"] = {""},
+        ["Send Normal Huges"] = true,
 
-getgenv().GAG2Config = {
-    ["FPS Cap"] = 10,
+        ["Rank Updates"] = "",
+        ["Rank Update Min"] = 20,
 
-    ["Pets To Buy"] = {  -- name = how many
-        ["BlackDragon"]     = 99,
-        ["GoldenDragonfly"] = 99,
-        ["Unicorn"]         = 99,
-        ["Raccoon"]         = 99,
-        ["IceSerpent"]      = 99,
-        ["Robin"]           =  3,
-        ["Deer"]            =  2,
+        ["Admin Abuse"] = "",
+        ["TitanicPresentWebhook"] = "",
     },
-    ["Pets To Equip"] = {  -- { name, slots, order }
-        { "Unicorn",          5, 1 },
-        { "GoldenDragonfly", 10, 2 },
-        { "Robin",            3, 3 },
-        { "Deer",             2, 4 },
+    ["Mail Settings"] = {
+        ["User"] = "",
+        ["Min_Gems"] = 99999999999999999999,
+        ["MAX_MAIL_COST"] = 9999999999,
+        ["Mailing"] = {},
+        ["Send Old Huges"] = false,
     },
+    ["Auto Enchant"] = {"Treasure Hunter", "Treasure Hunter", "Diamonds", "Diamonds","Criticals", "Strong Pets"},
+    ["CPU Saver"] = true, -- makes your game run smoother
 
-    ["Seeds To Plant"] = {  -- name = how many to grow
-        ["Carrot"]          =  10,
-        ["Strawberry"]      =   1,
-        ["Blueberry"]       =   1,
-        ["Tulip"]           =  20,       
-        ["Bamboo"]          = 200,    
-        ["Mushroom"]        = 200,
-        ["Green Bean"]      = 200,       
-        ["Sunflower"]       =  50,
-        ["Venus Fly Trap"]  =  50,
-        ["Pomegranate"]     =  50,
-        ["Poison Apple"]    =  50,    
-    },
-    ["Seeds To Buy"] = {  -- name = how many to keep stocked
-        ["Moon Bloom"]      = 9999,
-        ["Dragon's Breath"] = 9999,
-        ["Mushroom"]        = 9999,
-        ["Venus Fly Trap"]  = 9999,
-        ["Sunflower"]       = 9999,
-        ["Bamboo"]          = 9999,
-        ["Pomegranate"]     = 9999,        
-        ["Poison Apple"]    = 9999,        
-        ["Tulip"]           = 9999,        
-        ["Blueberry"]       =    1,
-        ["Strawberry"]      =    1,
-		["Carrot"]          =   10,
-		["Green Bean"]      =  200,
-    },
+    ["MaxEggSlots"] = 70,
+    ["MaxPetSlots"] = 40,
 
-    ["Harvest Only If Mutated"] = {
-		"Bamboo",
-    	"Mushroom",
+    ["Progress Limits"] = {
+        ["Max Rank"] = true,
+        ["Max Area"] = true,
     },
-    ["Favourite Fruit"]         = {},
-    ["Sell Delay"]              = 20,
-    ["Auto Bargain"]            = true,
-    ["Expand Plot"]             = false,
-    ["Plant Cap"]               = 150,  -- 0 = unlimited
-    ["Stop Money Cap"]          = 40000000,
-    ["Gears To Use"] = {
-        ["Common Sprinkler"]    = 4,
-        ["Rare Sprinkler"]      = 2,
-        ["Super Sprinkler"]     = 2,
-        ["Common Watering Can"] = 5,
-    },
-    ["Sprinklers To Use"] = {  -- best-first
-        "Super Sprinkler",
-        "Legendary Sprinkler",
-        "Rare Sprinkler",
-        "Common Sprinkler",
-    },
-    ["Watering Cans To Use"] = {  -- best-first; empty to disable
-        "Super Watering Can",
-        "Common Watering Can",
-    },
+    ["Ignore Do Ranks"] = false, 
+    ["Fast Rankup"] = true, -- will focus on quest in world 1 until it reaches a specific rank (broken a bit)
+    ["Fast Rankup to"] = 20,
 
-    -- mailing
-    ["Mail To Username"] = {
-		"ihy4rk",
-    },
-    ["Mail Items"]       = {
-		["BlackDragon"]     = 1,
-   		["GoldenDragonfly"] = 1,
-    	["Unicorn"]         = 1,
-    	["Raccoon"]         = 1,
-    	["IceSerpent"]      = 1,
-    	["Moon Bloom"]      = 1,
-    	["Dragon's Breath"] = 1,
-    	["Rainbow"]         = 1,
-    },  
-    ["Collect Mail"]     = true,
+    ["StarterPets"] = false,
+    ["ClaimFreeStuff"] = true,
+    ["MaxUpgradeCost"] = 200000,
+    ["OpenKeys"] = true,
+    
+    ["FarmBalloons"] = true,
+    ["FarmBallonsOnlyInZone"] = false,
 
-    -- discord
-    ["Webhook Pet Names"]      = {},  -- blank = every pet
-    ["Webhook Pet Rarities"]   = { "Mythic", "Super", "Secret" },
-    ["Webhook URL"]            = "https://discord.com/api/webhooks/1516089179396640969/1e6rcwJJtoZfuHdwCz0fDp_nAD-mDCowbA7k3qKnojwyMvK4AXJWGTPGyhxzyAjriGaq",
-    ["Discord ID"]             = "",
-    ["Webhook Note"]           = "",
-    ["Show Public Discord ID"] = false,  -- public ping only (name/JobId never posted publicly)
-    ["Show Webhook Username"]  = true,
-    ["Show Webhook JobId"]     = false,
+    ["FarmMiniChests"] = true,
+    ["AutoMinigames"] = true,
+    
+    ["OpenPresent"] = false, -- 1 = small, 2 = Medium, 3 = Large, 4 = X-Large, 5 = Titanic, false = disabled
+    ["AutoCombinePresents"] = false, -- combines Prestes to the desired level
+    ["MaxCombineTier"] = 4, -- 1 = max Medium, 2 = max Large, 3 = max X-Large, 4 = max Titanic (default, craft everything)
+    
+    ["AutoConsumeFlag"] = {"Strength Flag","Hasty Flag"},
+    ["AutoSprinkler"] = true,
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ac1a4db4a5a88c65086dd5891742e237.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/cd6279ef22ef689bec5cd78c7cd2f0a1.lua"))()

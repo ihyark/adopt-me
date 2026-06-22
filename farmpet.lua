@@ -25,7 +25,7 @@ getgenv().Config =  {
     ["MaxPetSlots"] = 99,
 
     ["Progress Limits"] = {
-        ["Max Rank"] = 11,
+        ["Max Rank"] = 9,
         ["Max Area"] = 220,
     },
     ["Ignore Do Ranks"] = false, 

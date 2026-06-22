@@ -38,7 +38,7 @@ getgenv().Config =  {
     ["OpenKeys"] = true,
     
     ["FarmBalloons"] = false,
-    ["FarmBallonsOnlyInZone"] = false,
+    ["FarmBallonsOnlyInZone"] = true,
 
     ["FarmMiniChests"] = true,
     ["AutoMinigames"] = true,

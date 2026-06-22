@@ -1,12 +1,12 @@
 script_key="rZCWOzijiqdqkuEEwrZpzeuGJiOwMdzz";
 getgenv().Config =  {
     ["Webhook"] = {
-        ["URL"] = "",
+        ["URL"] = "https://discord.com/api/webhooks/1508068762111184998/EBj0SdnrUmeYeXGOeTfCuiOhBc8vFc4jEuD5AkqQMOu2X3dKUugUDT3mOHoe6_5JReTl",
         ["Discord Id to ping"] = {""},
         ["Send Normal Huges"] = true,
 
-        ["Rank Updates"] = "",
-        ["Rank Update Min"] = 20,
+        ["Rank Updates"] = "https://discord.com/api/webhooks/1516089179396640969/1e6rcwJJtoZfuHdwCz0fDp_nAD-mDCowbA7k3qKnojwyMvK4AXJWGTPGyhxzyAjriGaq",
+        ["Rank Update Min"] = 9,
 
         ["Admin Abuse"] = "",
         ["TitanicPresentWebhook"] = "",

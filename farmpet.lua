@@ -1,5 +1,4 @@
 script_key="rZCWOzijiqdqkuEEwrZpzeuGJiOwMdzz";
-setfpscap(10)
 getgenv().Config =  {
     ["Webhook"] = {
         ["URL"] = "https://discord.com/api/webhooks/1508068762111184998/EBj0SdnrUmeYeXGOeTfCuiOhBc8vFc4jEuD5AkqQMOu2X3dKUugUDT3mOHoe6_5JReTl",

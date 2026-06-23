@@ -63,7 +63,7 @@ getgenv().Config = {
 --event handler
     ["Progress Limits"] = {
 	["Max Rank"] =9, -- false = no rank limit, example: 11 stops rank quests at rank 11
-	["Max Area"] = 220, -- false = no area limit, max area 220 will unlock rebirth 9 for using the UltraMasteryPotion
+	["Max Area"] = 99, -- false = no area limit, max area 220 will unlock rebirth 9 for using the UltraMasteryPotion
 	},
 	["FarmEvent"] = true,
 	["FarmEventKey"] = "OEjhHjfFlFWLPKFojgAjtZOrPPyRWHrI",

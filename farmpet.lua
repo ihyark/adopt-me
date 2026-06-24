@@ -49,7 +49,7 @@ getgenv().Config = {
     ["NoCoinsFarmTo"] = "100m",
     ["FarmMiniBoss"] = true,
     ["CollectRandomRewards"] = true,
-    ["FarmDayDreamChest"] = true1,
+    ["FarmDayDreamChest"] = true,
 
     ["FarmDayDreamChestWhileKey"] = false, -- ENABLING THIS MAY LEAD TO YOUR ACCOUNT INFINITLY FARMING CHESTS
 

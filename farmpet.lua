@@ -1,3 +1,4 @@
+_G.TpWorkspace = true
 script_key="rZCWOzijiqdqkuEEwrZpzeuGJiOwMdzz";
 getgenv().Config =  {
     ["Webhook"] = {

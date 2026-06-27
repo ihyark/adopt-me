@@ -22,7 +22,7 @@ getgenv().Config = {
     ["EggSettings"] = {
         ["KickIfNoEgg"] = "rejoin",
         ["FarmChesWhileHatching"] = true,
-        ["MinDeepFreeEgg"] = 100,
+        ["MinDeepFreeEgg"] = false,
         ["MinDeepLockedEgg"] = 100,
     },
 

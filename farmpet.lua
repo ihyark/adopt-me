@@ -20,7 +20,7 @@ getgenv().Config = {
     ["CPU Saver"] = true, -- turn on or off
 
     ["EggSettings"] = {
-        ["KickIfNoEgg"] = rejoin,
+        ["KickIfNoEgg"] = "rejoin",
         ["FarmChesWhileHatching"] = true,
         ["MinDeepFreeEgg"] = 100,
         ["MinDeepLockedEgg"] = 100,

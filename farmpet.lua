@@ -19,7 +19,7 @@ getgenv().Config =  {
         ["Send Old Huges"] = false,
     },
     ["Auto Enchant"] = {"Treasure Hunter", "Treasure Hunter", "Diamonds", "Diamonds","Criticals", "Strong Pets"},
-    ["CPU Saver"] = false, -- makes your game run smoother
+    ["CPU Saver"] = true, -- makes your game run smoother
 
     ["MaxEggSlots"] = 50,
     ["MaxPetSlots"] = 40,

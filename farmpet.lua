@@ -6,7 +6,7 @@ getgenv().Config =  {
         ["Send Normal Huges"] = true,
 
         ["Rank Updates"] = "",
-        ["Rank Update Min"] = 20,
+        ["Rank Update Min"] = 9,
 
         ["Admin Abuse"] = "",
         ["TitanicPresentWebhook"] = "",

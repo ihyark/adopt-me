@@ -1,25 +1,25 @@
 _G.GAGConfig = _G.GAGConfig or {
     ["Harvest"] = {
         ["Auto Harvest"]  = true,             -- true / false  (false = never harvest/sell)
-        ["Sell At"]       = 1,               -- number
-        ["Sell Every"]    = 10,               -- seconds (0 = off)
+        ["Sell At"]       = 10,               -- number
+        ["Sell Every"]    = 30,               -- seconds (0 = off)
         ["Only Harvest"]  = {},               -- e.g. { "Watermelon", "Apple" }
         ["Don't Harvest"] = {},               -- e.g. { "Carrot", "Tomato" }
-        ["Wait For Mutation"] = {"Bamboo", "Mushroom"},           -- e.g. { "Mushroom", "Bamboo" }  (don't harvest these until they get ANY mutation — wait for a weather event to mutate them; they're also kept from the shovel while waiting)
+        ["Wait For Mutation"] = { "Bamboo", "Mushroom" },           -- e.g. { "Mushroom", "Bamboo" }  (don't harvest these until they get ANY mutation — wait for a weather event to mutate them; they're also kept from the shovel while waiting)
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- true / false  (false = never buy/plant; also stops expand/replace)
-        ["Plant Plan"]  = {["Green Bean"] = 20,["Tomato"] = 20, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 500, ["Mushroom"] = 500, ["Carrot"] = 10, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
-        ["Only Plant"]  = {"Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom"},                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
+        ["Plant Plan"]  = { ["Green Bean"] = 20, Tomato = 20, Strawberry = 10, Blueberry = 10, Carrot = 10, Bamboo = 500, Mushroom = 500, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
+        ["Only Plant"]  = { "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
         ["Minimum Seed"] = "Bamboo",                -- e.g. "Bamboo"  (never BUY/PLANT a seed cheaper than this tier — stops it filling with Carrot/Strawberry/Blueberry junk. "" = no floor, fill with anything)
         ["Layout"]      = "compact",          -- "compact" / "spread"
-        ["Don't Plant"] = {"Mega", "Rainbow"},                 -- e.g. { "Carrot", "Green Bean" }
-        ["Don't Buy"]   = {"Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower"},                 -- e.g. { "Mango", "Coconut" }
-        ["Keep Seeds"]  = {"Mega", "Rainbow"},
+        ["Don't Plant"] = { "Mega", "Rainbow" },                 -- e.g. { "Carrot", "Green Bean" }
+        ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- e.g. { "Mango", "Coconut" }
+        ["Keep Seeds"]  = { "Mega", "Rainbow" },
         ["Plant Limit"] = 400,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
-        ["Never Shovel"] = {},                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
+        ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
         ["Shovel Up To"] = "Rare",                -- e.g. "Rare"  (a RARITY TIER — Common/Uncommon/Rare/Epic — removes ONLY that tier and below. "" = no extra ceiling. LEGENDARY/Mythic/Super are ALWAYS protected regardless. Single-harvest crops are HARVESTED when ripe, never shoveled — no wasted fruit)
-        ["Buy Seeds"]    = { ["Bamboo"] = 500, ["Mushroom"] = 500, ["Carrot"] = 10, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 100, ["Green Bean"] = 20 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
+        ["Buy Seeds"]    = { Bamboo = 500, Mushroom = 500, Carrot = 10, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 100, ["Green Bean"] = 20 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
     },
     ["Money"] = {
         ["Keep Cash"]          = 15000,    -- always keep at least this much money
@@ -35,11 +35,11 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Pets"] = {
         ["Buy"]            = { "Unicorn", "GoldenDragonfly", "Raccoon", "BlackDragon", "IceSerpent", Deer = 6 },   -- list = tame UNLIMITED; OR caps { Robin = 6, Deer = 6 } = stop once you OWN N of that species; mix ok { "Unicorn", Deer = 6 }
-        ["Equip"]          = {"Deer"},    -- PRIORITY (best first): fill all 6 slots from what you OWN — Unicorn first, then GoldenDragonfly, then Deer. (exact counts also work: { Deer = 4, Unicorn = 1 }; per-pet caps: { {Unicorn=2}, {Deer=6} })
+        ["Equip"]          = { "Deer" },    -- PRIORITY (best first): fill all 6 slots from what you OWN — Unicorn first, then GoldenDragonfly, then Deer. (exact counts also work: { Deer = 4, Unicorn = 1 }; per-pet caps: { {Unicorn=2}, {Deer=6} })
         ["Auto Buy Slots"] = true,            -- true / false
         ["Max Pet Slots"]  = 6,               -- number 3..6
     },
-    ["Gear"] = 
+    ["Gear"] = {
         ["Auto Buy"]             = true,            -- true / false
         ["Keep Cash"]            = 15000,           -- number
         ["Sprinkler Coverage"]   = "concentrate",   -- "concentrate" / "value" / "spread"
@@ -55,7 +55,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Auto Claim"] = true,                -- true / false
         ["Send To"]    = "ihy4rk",                  -- username to funnel items to ("" = off)
         ["Send Every"] = 0,                   -- MINUTES between mail sends (0 = default ~45s). e.g. 5 = send every 5 minutes. This is the send INTERVAL only — it does NOT affect the per-item { Item, Count = N } threshold.
-        ["Send"]       = {                    -- e.g. { "Gold", { Item = "Gold", Count = 30 } }  bare name = send the WHOLE stack each cycle; { Item, Count = N } = wait until you hold >= N, then send N at a time (a batch threshold, NOT a "max"). Equipped pets never sent.
+        ["Send"]       = {                    -- e.g. { "Gold",  Item = "Gold", Count = 30 } }  bare name = send the WHOLE stack each cycle; { Item, Count = N } = wait until you hold >= N, then send N at a time (a batch threshold, NOT a "max"). Equipped pets never sent.
             "Moon Bloom", "Dragon's Breath", "Hypno Bloom", "Rainbow", "Mega",
             "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent",
             "Super Sprinkler", "Super Watering Can",

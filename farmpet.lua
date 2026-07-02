@@ -9,17 +9,17 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- true / false  (false = never buy/plant; also stops expand/replace)
-        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Tomato"] = 20, Strawberry = 10, Blueberry = 10, Carrot = 10, Gold = 50, Bamboo = 500, Mushroom = 500, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
-        ["Only Plant"]  = { "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Gold" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
+        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Tomato"] = 20, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Gold"] = 100, ["Bamboo"] = 250, ["Mushroom"] = 250, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
+        ["Only Plant"]  = {},                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
         ["Minimum Seed"] = "Bamboo",                -- e.g. "Bamboo"  (never BUY/PLANT a seed cheaper than this tier — stops it filling with Carrot/Strawberry/Blueberry junk. "" = no floor, fill with anything)
         ["Layout"]      = "compact",          -- "compact" / "spread"
         ["Don't Plant"] = { "Mega", "Rainbow" },                 -- e.g. { "Carrot", "Green Bean" }
         ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- e.g. { "Mango", "Coconut" }
         ["Keep Seeds"]  = { "Mega", "Rainbow" },
-        ["Plant Limit"] = 400,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
+        ["Plant Limit"] = 500,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
         ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
         ["Shovel Up To"] = "Rare",                -- e.g. "Rare"  (a RARITY TIER — Common/Uncommon/Rare/Epic — removes ONLY that tier and below. "" = no extra ceiling. LEGENDARY/Mythic/Super are ALWAYS protected regardless. Single-harvest crops are HARVESTED when ripe, never shoveled — no wasted fruit)
-        ["Buy Seeds"]    = { Bamboo = 500, Mushroom = 500, Carrot = 10, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 100, ["Green Bean"] = 20 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
+        ["Buy Seeds"]    = {},                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
     },
     ["Money"] = {
         ["Keep Cash"]          = 15000,    -- always keep at least this much money

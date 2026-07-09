@@ -9,17 +9,17 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- true / false  (false = never buy/plant; also stops expand/replace)
-        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 100, ["Tomato"] = 20, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 500, ["Mushroom"] = 500, ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
-        ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
+        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 100, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 350, ["Mushroom"] = 100, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
+        ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
         ["Minimum Seed"] = "Bamboo",                -- e.g. "Bamboo"  (never BUY/PLANT a seed cheaper than this tier — stops it filling with Carrot/Strawberry/Blueberry junk. "" = no floor, fill with anything)
         ["Layout"]      = "compact",          -- "compact" / "spread"
         ["Don't Plant"] = { "Mega", "Rainbow" },                 -- e.g. { "Carrot", "Green Bean" }
         ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- e.g. { "Mango", "Coconut" }
         ["Keep Seeds"]  = { "Mega", "Rainbow" },
-        ["Plant Limit"] = 400,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
+        ["Plant Limit"] = 500,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
         ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
         ["Shovel Up To"] = "Rare",                -- e.g. "Rare"  (a RARITY TIER — Common/Uncommon/Rare/Epic — removes ONLY that tier and below. "" = no extra ceiling. LEGENDARY/Mythic/Super are ALWAYS protected regardless. Single-harvest crops are HARVESTED when ripe, never shoveled — no wasted fruit)
-        ["Buy Seeds"]    = {},                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
+        ["Buy Seeds"]    = { ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
     },
     ["Money"] = {
         ["Keep Cash"]          = 15000,    -- always keep at least this much money
@@ -35,7 +35,7 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Pets"] = {
         ["Buy"]            = { "Unicorn", "GoldenDragonfly", "Raccoon", "BlackDragon", "IceSerpent", Deer = 6 },   -- list = tame UNLIMITED; OR caps { Robin = 6, Deer = 6 } = stop once you OWN N of that species; mix ok { "Unicorn", Deer = 6 }
-        ["Equip"]          = { "Deer" },    -- PRIORITY (best first): fill all 6 slots from what you OWN — Unicorn first, then GoldenDragonfly, then Deer. (exact counts also work: { Deer = 4, Unicorn = 1 }; per-pet caps: { {Unicorn=2}, {Deer=6} })
+        ["Equip"]          = { Deer = 5, Unicorn = 1 },    -- PRIORITY (best first): fill all 6 slots from what you OWN — Unicorn first, then GoldenDragonfly, then Deer. (exact counts also work: { Deer = 4, Unicorn = 1 }; per-pet caps: { {Unicorn=2}, {Deer=6} })
         ["Auto Buy Slots"] = true,            -- true / false
         ["Max Pet Slots"]  = 6,               -- number 3..6
     },
@@ -45,8 +45,8 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Sprinkler Coverage"]   = "concentrate",   -- "concentrate" / "value" / "spread"
         ["Place Sprinklers"]     = { ["Common Sprinkler"] = 4 },          -- e.g. { ["best"] = 4 } or { ["Rare Sprinkler"] = 2 }
         ["Best Sprinkler Up To"] = "Common Sprinkler",          -- "Common/Uncommon/Rare/Super/Legendary Sprinkler"
-        ["Keep Gear"]            = { ["Super Sprinkler"] = 100 },   -- e.g. { ["Trowel"] = 1 }  (buy & hold N)
-        ["Buy Gear"]             = { "Super Sprinkler", "Common Sprinkler" },   -- e.g. { "Trowel" }  (buy & keep, never placed)
+        ["Keep Gear"]            = { ["Super Sprinkler"] = 1, ["Super Watering Can"] = 1, },   -- e.g. { ["Trowel"] = 1 }  (buy & hold N)
+        ["Buy Gear"]             = { "Super Sprinkler", "Common Sprinkler", "Super Watering Can" },   -- e.g. { "Trowel" }  (buy & keep, never placed)
     },
     ["Event Seeds"] = {
         ["Auto Claim"] = true,       -- automatically grab seed packs that drop during events
@@ -74,11 +74,31 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Teleport"]              = true,   -- true / false  (on = grab pets + event seeds by TELEPORTING straight onto each one and fast-firing — much faster than slide/walk. Separate from Fast Travel)
     },
     ["Friends"] = {
-        ["Auto Accept"] = true,              -- true / false  (accept incoming friend requests from players in the server)
-        ["Auto Send"]   = false,              -- true / false  (send friend requests to players in the server — some accounts must be friends to mail/trade)
+        ["Auto Accept"] = true,              -- toggle. accept incoming friend requests from ANYONE in the server
+        ["Auto Send"]   = true,              -- toggle. send friend requests to EVERYONE in the server (spammy — off by default)
+        -- NOTE: whoever is in Mail > Send To (your gift/mail recipients) is ALWAYS auto-friended regardless of these two —
+        -- the bot sends + accepts a REAL Roblox friend request to/from them. This is what auto-confirms the game's
+        -- "Send Friend Request?" popup, so once your alts are friends the gift/fake-friend popups stop reappearing.
     },
+    ["Auction"] = {
+        ["Auto Buy"]   = false,               -- toggle. auto-buy wanted items off the Auctioneer (Dutch auction: the price DECAYS from a huge start to a floor — the bot buys the moment it drops to/below your max)
+        ["Buy"]        = {                     -- MAP: item name -> MAX sheckles you'll pay (matched loosely against the lot's shown name, case-insensitive; put "" or a huge number to buy at any price). e.g.:
+            -- ["Venom Spitter"]     = 5000000,
+            -- ["Common Egg"]        = 200000,
+            -- ["Uncommon Seed Pack"] = 50000,
+        },
+        ["Keep Cash"]  = 0,                   -- number: never let the buy drop your sheckles below this (0 = spend freely). protects your balance.
+        ["Check Every"] = 0.2,                -- number (SECONDS) between price checks + buy tries. 0.2 = the game's own cap (~5 tries/sec); going LOWER doesn't buy faster (the server drops attempts closer than 0.2s) but detects the price drop a touch sooner.
+        ["Max Tries"]  = 10,                   -- number: how hard to fight for a lot — re-fires the buy at the max ~5/sec rate up to this many times, stopping the instant it confirms. higher = more persistent on a contested lot.
+    },
+    ["Eggs"] = {
+        ["Auto Open"] = true,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
+        ["Open"]      = {                     -- LIST of egg names to open (loose, case-insensitive). {} = open nothing. { "all" } = open EVERY egg you get. e.g.:
+            -- "Common Egg", "Uncommon Egg",
+        },
+    },    
     ["Performance"] = {
-        ["FPS Cap"]              = 60,        -- number (0 = uncapped; also the farm's logic/movement rate)
+        ["FPS Cap"]              = 0,        -- number (0 = uncapped; also the farm's logic/movement rate)
         ["Low Graphics"]         = true,      -- true / false
         ["Remove Other Gardens"] = true,      -- true / false  (needs Low Graphics)
         ["Hide Crop Visuals"]    = true,      -- true / false  (hide the plant BODY/trunk/leaves; they still grow & harvest)

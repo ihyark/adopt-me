@@ -1,81 +1,86 @@
 _G.GAGConfig = _G.GAGConfig or {
     ["Harvest"] = {
-        ["Auto Harvest"]  = true,             -- true / false  (false = never harvest/sell)
-        ["Sell At"]       = 10,               -- number
-        ["Sell Every"]    = 30,               -- seconds (0 = off)
-        ["Only Harvest"]  = {},               -- e.g. { "Watermelon", "Apple" }
-        ["Don't Harvest"] = {},               -- e.g. { "Carrot", "Tomato" }
-        ["Wait For Mutation"] = { "Bamboo", "Mushroom" },           -- e.g. { "Mushroom", "Bamboo" }  (don't harvest these until they get ANY mutation — wait for a weather event to mutate them; they're also kept from the shovel while waiting)
+        ["Auto Harvest"]  = true,             -- toggle. false = never harvest OR sell
+        ["Sell At"]       = 10,               -- number. sell once the backpack holds about this many fruit
+        ["Sell Every"]    = 30,               -- number (seconds). also sell every N sec while holding fruit; 0 = off
+        ["Only Harvest"]  = {},               -- LIST of crop names (empty = harvest everything). e.g. { "Watermelon", "Dragon Fruit" }
+        ["Don't Harvest"] = {},               -- LIST of crop names = never harvest these. e.g. { "Carrot", "Green Bean" }
+        ["Wait For Mutation"] = { "Bamboo", "Mushroom" },   -- LIST of crop names. don't harvest these until they get ANY mutation (wait for a weather event); also kept from the shovel while waiting. e.g. { "Bamboo", "Mushroom" }
     },
     ["Planting"] = {
-        ["Auto Plant"]  = true,               -- true / false  (false = never buy/plant; also stops expand/replace)
-        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 600, ["Mushroom"] = 100 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
-        ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
-        ["Minimum Seed"] = "Bamboo",                -- e.g. "Bamboo"  (never BUY/PLANT a seed cheaper than this tier — stops it filling with Carrot/Strawberry/Blueberry junk. "" = no floor, fill with anything)
-        ["Layout"]      = "compact",          -- "compact" / "spread"
-        ["Don't Plant"] = { "Mega", "Rainbow" },                 -- e.g. { "Carrot", "Green Bean" }
-        ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower", "Ghost Pepper" },                 -- e.g. { "Mango", "Coconut" }
-        ["Keep Seeds"]  = { "Mega", "Rainbow" },
-        ["Plant Limit"] = 700,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
-        ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
-        ["Shovel Up To"] = "Rare",                -- e.g. "Rare"  (a RARITY TIER — Common/Uncommon/Rare/Epic — removes ONLY that tier and below. "" = no extra ceiling. LEGENDARY/Mythic/Super are ALWAYS protected regardless. Single-harvest crops are HARVESTED when ripe, never shoveled — no wasted fruit)
-        ["Buy Seeds"]    = { ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
+        ["Auto Plant"]  = true,               -- toggle. false = DON'T farm (no planting/expand/replace, no plot seed-buying). "Buy Seeds" + Mail still run -> a pure mail-stocking bot
+        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 600, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
+        ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
+        ["Minimum Seed"] = "Bamboo",          -- text: ONE seed name. never buy/plant a seed cheaper than this tier (stops Carrot/Strawberry junk). "" = no floor. e.g. "Bamboo"
+        ["Layout"]      = "compact",          -- text choice: "compact" (tight — best sprinkler coverage) or "spread"
+        ["Don't Plant"] = { "Mega", "Rainbow" },                 -- LIST of crop names = never plant these (also blocks BUYING them). e.g. { "Carrot", "Green Bean" }
+        ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- LIST of crop names = never spend money buying these (can still plant ones you already own). e.g. { "Mango", "Coconut" }
+        ["Keep Seeds"]  = { "Mega", "Rainbow" },                 -- MAP seed = number. keep N of each UNPLANTED in your bag (don't plant your last N). EACH needs a number. e.g. { ["Dragon's Breath"] = 5, Gold = 3 }
+        ["Plant Limit"] = 700,                  -- number (0 = off). cap TOTAL plants at this; if already over, shovel lowest-tier DOWN to it (cuts lag). Set ~200. Never shovels mutated/Mega/Plant-Plan/never-sell.
+        ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- LIST of crop names the Plant-Limit shovel must NEVER touch (your high-tier crops). e.g. { "Dragon Fruit", "Mango" }
+        ["Shovel Up To"] = "Rare",                -- text choice (a rarity TIER): "" / "Common" / "Uncommon" / "Rare" / "Epic". removes only that tier & below; Legendary+ always safe.
+        ["Buy Seeds"]    = { ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- MAP seed = number. buy & HOLD N of each for MAILING (not planted). EACH SEED NEEDS A NUMBER -> just "Dragon's Breath" is WRONG. e.g. { ["Bamboo"] = 500, ["Dragon's Breath"] = 10 }. Any SHOP seed (incl. Moon Bloom / Dragon's Breath when stocked); Gold/Rainbow/Mega can't be bought. Buys ANYTHING in stock it can afford, cheapest first — IGNORES Keep Cash (will spend down to 0 to stock mail seeds). Runs even with Auto Plant = false. (If a seed is ALSO in Plant Plan / Only Plant it STILL gets planted too — plant intent wins.)
     },
     ["Money"] = {
-        ["Keep Cash"]          = 15000,    -- always keep at least this much money
-        ["Auto Expand Plot"]   = true,     -- buy plot expansions automatically
-        ["Max Expansions"]     = 3,        -- cap how many expansions to auto-BUY this run. 0 = no limit; default 3 = stop after 3 (raise for a bigger plot)
-        ["Expand If Over"]     = 1500000,  -- only spend on an expansion when your cash is above this
-        ["Auto Replace Plants"] = true,    -- when the plot is full, dig up low-value plants and plant better ones
+        ["Keep Cash"]          = 15000,    -- number. always keep at least this much money
+        ["Auto Expand Plot"]   = true,     -- toggle. buy plot expansions automatically
+        ["Max Expansions"]     = 3,        -- number. cap expansions bought this run. 0 = no limit
+        ["Expand If Over"]     = 1500000,  -- number. only buy an expansion when cash is above this
+        ["Auto Replace Plants"] = true,    -- toggle. when the plot is full, dig up low-value plants for better ones
     },
     ["Never Sell"] = {                        -- protect fruit from being sold
-        ["By Mutation"] = {},                 -- e.g. { "Rainbow", "Gold" }
-        ["By Fruit"]    = {},                 -- e.g. { "Dragon Fruit" }
-        ["Exact"]       = {},                 -- e.g. { { fruit = "Carrot", mut = "Gold" } }
+        ["By Mutation"] = {},                 -- LIST of mutation names. e.g. { "Rainbow", "Gold" }
+        ["By Fruit"]    = {},                 -- LIST of fruit names. e.g. { "Dragon Fruit" }
+        ["Exact"]       = {},                 -- LIST of { fruit, mut } pairs. e.g. { { fruit = "Carrot", mut = "Gold" } }
     },
     ["Pets"] = {
-        ["Buy"]            = { "Unicorn", "GoldenDragonfly", "Raccoon", "BlackDragon", "IceSerpent", Deer = 6 },   -- list = tame UNLIMITED; OR caps { Robin = 6, Deer = 6 } = stop once you OWN N of that species; mix ok { "Unicorn", Deer = 6 }
-        ["Equip"]          = { "Deer" },    -- PRIORITY (best first): fill all 6 slots from what you OWN — Unicorn first, then GoldenDragonfly, then Deer. (exact counts also work: { Deer = 4, Unicorn = 1 }; per-pet caps: { {Unicorn=2}, {Deer=6} })
-        ["Auto Buy Slots"] = true,            -- true / false
+        ["Buy"]            = { "Unicorn", "GoldenDragonfly", "Raccoon", "BlackDragon", "IceSerpent", ["Deer"] = 6 },   -- pets to tame. bare "Name" = tame UNLIMITED; ["Name"] = N = stop once you OWN N. mix ok. e.g. { "Unicorn", ["Deer"] = 6 }
+        ["Equip"]          = { ["Deer"] = 6 },    -- which pets to keep equipped: MAP name = number  e.g. { ["Deer"] = 6 }   OR a priority LIST  e.g. { "Unicorn", "Deer" }  (fills the 6 slots best-first)
+        ["Auto Buy Slots"] = true,            -- toggle. buy more equip slots (up to Max Pet Slots)
         ["Max Pet Slots"]  = 6,               -- number 3..6
     },
     ["Gear"] = {
-        ["Auto Buy"]             = true,            -- true / false
-        ["Keep Cash"]            = 15000,           -- number
-        ["Sprinkler Coverage"]   = "concentrate",   -- "concentrate" / "value" / "spread"
-        ["Place Sprinklers"]     = { ["Common Sprinkler"] = 4 },          -- e.g. { ["best"] = 4 } or { ["Rare Sprinkler"] = 2 }
-        ["Best Sprinkler Up To"] = "Common Sprinkler",          -- "Common/Uncommon/Rare/Super/Legendary Sprinkler"
-        ["Keep Gear"]            = { ["Super Sprinkler"] = 1, ["Super Watering Can"] = 1, },   -- e.g. { ["Trowel"] = 1 }  (buy & hold N)
-        ["Buy Gear"]             = { "Super Sprinkler", "Common Sprinkler", "Super Watering Can" },   -- e.g. { "Trowel" }  (buy & keep, never placed)
+        ["Auto Buy"]             = true,            -- toggle. master switch for buying / placing gear
+        ["Keep Cash"]            = 15000,           -- number. keep at least this much money when buying gear
+        ["Sprinkler Coverage"]   = "concentrate",   -- text choice: "concentrate" / "value" / "spread"
+        ["Place Sprinklers"]     = { ["Common Sprinkler"] = 4 },   -- MAP name = number (special key "best" = best you own). e.g. { ["best"] = 4 } or { ["Rare Sprinkler"] = 2 }
+        ["Best Sprinkler Up To"] = "Common Sprinkler",   -- text: ONE sprinkler name (with "best", don't place above this). e.g. "Rare Sprinkler" / "Super Sprinkler"
+        ["Keep Gear"]            = {},   -- MAP gear = number. buy & hold N. e.g. { ["Trowel"] = 1 }
+        ["Buy Gear"]             = { "Super Sprinkler", "Super Watering Can" },   -- LIST of gear names. buy & keep, never placed. e.g. { "Super Sprinkler", "Trowel" }
     },
     ["Event Seeds"] = {
-        ["Auto Claim"] = true,       -- automatically grab seed packs that drop during events
+        ["Auto Claim"] = true,       -- toggle. auto-grab seed packs that drop during events
     },
     ["Mail"] = {
-        ["Auto Claim"] = true,                -- true / false
-        ["Send To"]    = "ihy4rk",                  -- username to funnel items to ("" = off)
-        ["Send Every"] = 0,                   -- MINUTES between mail sends (0 = default ~45s). e.g. 5 = send every 5 minutes. This is the send INTERVAL only — it does NOT affect the per-item { Item, Count = N } threshold.
-        ["Send"]       = {                    -- e.g. { "Gold",  Item = "Gold", Count = 30 } }  bare name = send the WHOLE stack each cycle; { Item, Count = N } = wait until you hold >= N, then send N at a time (a batch threshold, NOT a "max"). Equipped pets never sent.
-            "Moon Bloom", "Dragon's Breath", "Hypno Bloom", "Rainbow", "Mega", "Ghost Pepper"
-            "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent",
+        ["Auto Claim"] = true,                -- toggle. auto-claim items in your mailbox
+        ["Auto Accept Gift"] = true,          -- toggle. auto-accept incoming GIFTS from other players (+ clear the popup) so a recipient alt receives hands-off. (Gift = an in-SERVER item transfer, no mail limit, no friends needed)
+        ["Send To"]    = "ihy4rk",                  -- WHO to funnel items to. ONE name "vinfarmm", or a PRIORITY LIST { "alt1", "alt2" }. "" or {} = sending OFF.
+                                              --   routing: the first listed name in THIS server -> GIFT it (instant, server-wide, no mail limit); if NONE are in-server -> MAIL the first name (works cross-server).
+        ["Send Every"] = 0,                   -- number (MINUTES) between sends. 0 = default ~45s. (send INTERVAL only — not the per-item Count)
+        ["Send"]       = {                    -- LIST: bare "Name" = send the WHOLE stack; { Item = "Name", Count = N } = wait until you hold N, then send N. equipped pets never sent. e.g. { "Gold", { Item = "Carrot", Count = 100 } }
+            "Moon Bloom", "Dragon's Breath", "Rainbow", "Mega", "Ghost Pepper", "Hypno Bloom",
+            "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent", 
             "Super Sprinkler", "Super Watering Can",
         },
     },
     ["Misc"] = {
-        ["Auto Return To Garden"] = true,     -- true / false
-        ["Show Stats"]            = true,     -- true / false
-        ["Hide Game UI"]          = true,     -- true / false  (hide the GAME's own UI — chat/backpack/health/topbar + its menus — behind the overlay for a clean screen; restored when you press SHOW GUI)
-        ["Show Console"]          = false,    -- true / false  (the left/right buy + shovel/plant feed panels; off by default so they don't crowd the stats on small screens — toggle live with the CONSOLE button)
-        ["Smart Travel"]          = true,     -- true / false
-        ["Auto Daily Deal"]       = true,     -- true / false
-        ["Walk Speed"]            = 35,       -- number 16..35  (fallback WALK speed when Fast Travel is off or the slide gets stuck)
-        ["Slide Speed"]           = 30,       -- number 10..150  (noclip SLIDE speed for Fast Travel excursions; default 30. Higher = faster but closer to the ~180/s anti-cheat snap ceiling)
-        ["Fast Travel"]           = true,    -- true / false  (on = noclip-SLIDE travel: same speed at ANY fps; falls back to walking if yanked. off = plain walking)
-        ["Teleport"]              = true,   -- true / false  (on = grab pets + event seeds by TELEPORTING straight onto each one and fast-firing — much faster than slide/walk. Separate from Fast Travel)
+        ["Auto Return To Garden"] = true,     -- toggle. come back to your garden if you get stuck/teleported away
+        ["Show Stats"]            = true,     -- toggle. the on-screen stats overlay
+        ["Hide Game UI"]          = true,    -- toggle. DEFAULT off (overlay is already on top, so you keep inventory/hotbar). true = hide the game's chat/backpack/health/topbar for a clean AFK screen (restored on SHOW GUI)
+        ["Show Console"]          = false,    -- toggle. the left/right buy + shovel/plant feed panels (toggle live with the CONSOLE button)
+        ["Smart Travel"]          = true,     -- toggle. teleport to the nearest hub then walk the short rest
+        ["Auto Daily Deal"]       = true,     -- toggle. sell one backpack a day at the 5x Daily Deal
+        ["Walk Speed"]            = 0,        -- number: 0 or 16..35. fallback walk speed. 0 = use the GAME's own walk speed (no override)
+        ["Slide Speed"]           = 30,       -- number 10..150. noclip SLIDE speed for Fast Travel. higher = faster but nearer the ~180/s anti-cheat ceiling
+        ["Fast Travel"]           = true,    -- toggle. on = noclip-slide travel (same speed at any fps); off = plain walking
+        ["Teleport"]              = true,     -- toggle. on = grab pets + event seeds by teleporting straight onto each. separate from Fast Travel
     },
     ["Friends"] = {
         ["Auto Accept"] = true,              -- toggle. accept incoming friend requests from ANYONE in the server
         ["Auto Send"]   = true,              -- toggle. send friend requests to EVERYONE in the server (spammy — off by default)
+        -- NOTE: whoever is in Mail > Send To (your gift/mail recipients) is ALWAYS auto-friended regardless of these two —
+        -- the bot sends + accepts a REAL Roblox friend request to/from them. This is what auto-confirms the game's
+        -- "Send Friend Request?" popup, so once your alts are friends the gift/fake-friend popups stop reappearing.
     },
     ["Auction"] = {
         ["Auto Buy"]   = false,               -- toggle. auto-buy wanted items off the Auctioneer (Dutch auction: the price DECAYS from a huge start to a floor — the bot buys the moment it drops to/below your max)
@@ -89,22 +94,22 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Max Tries"]  = 10,                   -- number: how hard to fight for a lot — re-fires the buy at the max ~5/sec rate up to this many times, stopping the instant it confirms. higher = more persistent on a contested lot.
     },
     ["Eggs"] = {
-        ["Auto Open"] = true,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
+        ["Auto Open"] = false,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
         ["Open"]      = {                     -- LIST of egg names to open (loose, case-insensitive). {} = open nothing. { "all" } = open EVERY egg you get. e.g.:
             "Common Egg", "Uncommon Egg",
         },
-    },    
+    },
     ["Performance"] = {
-        ["FPS Cap"]              = 0,        -- number (0 = uncapped; also the farm's logic/movement rate)
-        ["Low Graphics"]         = true,      -- true / false
-        ["Remove Other Gardens"] = true,      -- true / false  (needs Low Graphics)
-        ["Hide Crop Visuals"]    = true,      -- true / false  (hide the plant BODY/trunk/leaves; they still grow & harvest)
-        ["Hide Fruit Visuals"]   = true,      -- true / false  (hide the FRUIT too — makes it invisible. SEPARATE from Hide Crop Visuals (that's the body). Fruit still grows & harvests. Default on)
-        ["Hide Players"]         = true,     -- true / false  (hide OTHER players' characters — render saving + peace of mind; the bot never reads or fires their prompts)
+        ["FPS Cap"]              = 0,        -- number (0 = uncapped; also caps the farm's logic/movement rate)
+        ["Low Graphics"]         = true,      -- toggle. strip textures/shadows/effects for performance
+        ["Remove Other Gardens"] = true,      -- toggle. strip other players' plots (independent of Low Graphics)
+        ["Hide Crop Visuals"]    = true,      -- toggle. hide the plant BODY/trunk/leaves (still grow & harvest)
+        ["Hide Fruit Visuals"]   = true,      -- toggle. hide the FRUIT too (separate from Hide Crop Visuals; still grows & harvests)
+        ["Hide Players"]         = true,      -- toggle. hide OTHER players' characters (render saving)
     },
     ["Debug"] = {
-        ["Log To File"] = true,   -- true / false  (writes GAG_LOG_<name>.txt — a timestamped log of what the farm did + WHY it skipped something)
-        ["Console"]     = true,   -- true / false  (also print log lines to the executor console). Or a list to filter, e.g. { "REPLACE", "ERROR" }
+        ["Log To File"] = true,   -- toggle. writes GAG_LOG_<name>.txt (what the farm did + why it skipped something)
+        ["Console"]     = true,   -- toggle, OR a LIST of tags to filter. e.g. true   or   { "REPLACE", "ERROR" }
     },
 }
 

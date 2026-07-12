@@ -9,14 +9,14 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- true / false  (false = never buy/plant; also stops expand/replace)
-        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 100, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 350, ["Mushroom"] = 100, ["Dragon's Breath"] = 100, ["Moon Bloom"] = 100, ["Hypno Bloom"] = 10 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
+        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 600, ["Mushroom"] = 100 },                 -- e.g. { Apple = 50, ["Dragon Fruit"] = 20 }  (keep N planted, then auto-fill)
         ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- e.g. { "Bamboo", "Apple" }  (plant ONLY these)
         ["Minimum Seed"] = "Bamboo",                -- e.g. "Bamboo"  (never BUY/PLANT a seed cheaper than this tier — stops it filling with Carrot/Strawberry/Blueberry junk. "" = no floor, fill with anything)
         ["Layout"]      = "compact",          -- "compact" / "spread"
         ["Don't Plant"] = { "Mega", "Rainbow" },                 -- e.g. { "Carrot", "Green Bean" }
-        ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- e.g. { "Mango", "Coconut" }
+        ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower", "Ghost Pepper" },                 -- e.g. { "Mango", "Coconut" }
         ["Keep Seeds"]  = { "Mega", "Rainbow" },
-        ["Plant Limit"] = 500,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
+        ["Plant Limit"] = 700,                  -- number (0 = off). Cap TOTAL plants at this: never plant past it, AND if you're ALREADY over (e.g. 800), shovel the lowest-tier plants DOWN to it to cut lag / stop the game force-closing. Set ~200. Never shovels mutated (Gold/Rainbow/Mega), Mega-size, Plant-Plan or never-sell plants.
         ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- e.g. { "Dragon Fruit", "Mango" }  (extra plants the Plant Limit shovel must NEVER remove — for your high-tier crops)
         ["Shovel Up To"] = "Rare",                -- e.g. "Rare"  (a RARITY TIER — Common/Uncommon/Rare/Epic — removes ONLY that tier and below. "" = no extra ceiling. LEGENDARY/Mythic/Super are ALWAYS protected regardless. Single-harvest crops are HARVESTED when ripe, never shoveled — no wasted fruit)
         ["Buy Seeds"]    = { ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- e.g. { Bamboo = 500, Mushroom = 25 }  (BUY & HOLD these seeds up to N — for MAILING, NEVER planted. Only SHOP seeds; event seeds like Gold/Moon Bloom/Dragon's Breath can't be bought. Bought after the farm is filled, above Keep Cash)
@@ -56,7 +56,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Send To"]    = "ihy4rk",                  -- username to funnel items to ("" = off)
         ["Send Every"] = 0,                   -- MINUTES between mail sends (0 = default ~45s). e.g. 5 = send every 5 minutes. This is the send INTERVAL only — it does NOT affect the per-item { Item, Count = N } threshold.
         ["Send"]       = {                    -- e.g. { "Gold",  Item = "Gold", Count = 30 } }  bare name = send the WHOLE stack each cycle; { Item, Count = N } = wait until you hold >= N, then send N at a time (a batch threshold, NOT a "max"). Equipped pets never sent.
-            "Moon Bloom", "Dragon's Breath", "Hypno Bloom", "Rainbow", "Mega",
+            "Moon Bloom", "Dragon's Breath", "Hypno Bloom", "Rainbow", "Mega", "Ghost Pepper"
             "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent",
             "Super Sprinkler", "Super Watering Can",
         },

@@ -83,9 +83,9 @@ _G.GAGConfig = _G.GAGConfig or {
     ["Auction"] = {
         ["Auto Buy"]   = false,               -- toggle. auto-buy wanted items off the Auctioneer (Dutch auction: the price DECAYS from a huge start to a floor — the bot buys the moment it drops to/below your max)
         ["Buy"]        = {                     -- MAP: item name -> MAX sheckles you'll pay (matched loosely against the lot's shown name, case-insensitive; put "" or a huge number to buy at any price). e.g.:
-            -- ["Venom Spitter"]     = 5000000,
-            -- ["Common Egg"]        = 200000,
-            -- ["Uncommon Seed Pack"] = 50000,
+            ["Venom Spitter"]     = 5000000,
+            ["Common Egg"]        = 200000,
+            ["Uncommon Seed Pack"] = 50000,
         },
         ["Keep Cash"]  = 0,                   -- number: never let the buy drop your sheckles below this (0 = spend freely). protects your balance.
         ["Check Every"] = 0.2,                -- number (SECONDS) between price checks + buy tries. 0.2 = the game's own cap (~5 tries/sec); going LOWER doesn't buy faster (the server drops attempts closer than 0.2s) but detects the price drop a touch sooner.
@@ -94,7 +94,7 @@ _G.GAGConfig = _G.GAGConfig or {
     ["Eggs"] = {
         ["Auto Open"] = true,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
         ["Open"]      = {                     -- LIST of egg names to open (loose, case-insensitive). {} = open nothing. { "all" } = open EVERY egg you get. e.g.:
-            -- "Common Egg", "Uncommon Egg",
+            "Common Egg", "Uncommon Egg",
         },
     },    
     ["Performance"] = {

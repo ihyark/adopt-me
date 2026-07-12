@@ -76,9 +76,6 @@ _G.GAGConfig = _G.GAGConfig or {
     ["Friends"] = {
         ["Auto Accept"] = true,              -- toggle. accept incoming friend requests from ANYONE in the server
         ["Auto Send"]   = true,              -- toggle. send friend requests to EVERYONE in the server (spammy — off by default)
-        -- NOTE: whoever is in Mail > Send To (your gift/mail recipients) is ALWAYS auto-friended regardless of these two —
-        -- the bot sends + accepts a REAL Roblox friend request to/from them. This is what auto-confirms the game's
-        -- "Send Friend Request?" popup, so once your alts are friends the gift/fake-friend popups stop reappearing.
     },
     ["Auction"] = {
         ["Auto Buy"]   = false,               -- toggle. auto-buy wanted items off the Auctioneer (Dutch auction: the price DECAYS from a huge start to a floor — the bot buys the moment it drops to/below your max)

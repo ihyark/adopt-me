@@ -9,14 +9,14 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- toggle. false = DON'T farm (no planting/expand/replace, no plot seed-buying). "Buy Seeds" + Mail still run -> a pure mail-stocking bot
-        ["Plant Plan"]  = { ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 600, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
-        ["Only Plant"]  = { "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
+        ["Plant Plan"]  = { ["Poison Apple"] = 5, ["Poison Ivy"] = 5, ["Pomegranate"] = 5, ["Venom Spitter"] = 5, ["Venus Fly Trap"] = 5, ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 400, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
+        ["Only Plant"]  = { "Poison Apple", "Poison Ivy", "Pomegranate", "Venom Spitter", "Venus Fly Trap", "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
         ["Minimum Seed"] = "Bamboo",          -- text: ONE seed name. never buy/plant a seed cheaper than this tier (stops Carrot/Strawberry junk). "" = no floor. e.g. "Bamboo"
         ["Layout"]      = "compact",          -- text choice: "compact" (tight — best sprinkler coverage) or "spread"
         ["Don't Plant"] = { "Mega", "Rainbow" },                 -- LIST of crop names = never plant these (also blocks BUYING them). e.g. { "Carrot", "Green Bean" }
         ["Don't Buy"]   = { "Tulip", "Apple", "Corn", "Cactus", "Pineapple", "Banana", "Grape", "Coconut", "Mango", "Dragon Fruit", "Acorn", "Cherry", "Sunflower" },                 -- LIST of crop names = never spend money buying these (can still plant ones you already own). e.g. { "Mango", "Coconut" }
         ["Keep Seeds"]  = { "Mega", "Rainbow" },                 -- MAP seed = number. keep N of each UNPLANTED in your bag (don't plant your last N). EACH needs a number. e.g. { ["Dragon's Breath"] = 5, Gold = 3 }
-        ["Plant Limit"] = 700,                  -- number (0 = off). cap TOTAL plants at this; if already over, shovel lowest-tier DOWN to it (cuts lag). Set ~200. Never shovels mutated/Mega/Plant-Plan/never-sell.
+        ["Plant Limit"] = 800,                  -- number (0 = off). cap TOTAL plants at this; if already over, shovel lowest-tier DOWN to it (cuts lag). Set ~200. Never shovels mutated/Mega/Plant-Plan/never-sell.
         ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- LIST of crop names the Plant-Limit shovel must NEVER touch (your high-tier crops). e.g. { "Dragon Fruit", "Mango" }
         ["Shovel Up To"] = "Rare",                -- text choice (a rarity TIER): "" / "Common" / "Uncommon" / "Rare" / "Epic". removes only that tier & below; Legendary+ always safe.
         ["Buy Seeds"]    = { ["Star Fruit"] = 1, ["Sun Bloom"] = 1, ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- MAP seed = number. buy & HOLD N of each for MAILING (not planted). EACH SEED NEEDS A NUMBER -> just "Dragon's Breath" is WRONG. e.g. { ["Bamboo"] = 500, ["Dragon's Breath"] = 10 }. Any SHOP seed (incl. Moon Bloom / Dragon's Breath when stocked); Gold/Rainbow/Mega can't be bought. Buys ANYTHING in stock it can afford, cheapest first — IGNORES Keep Cash (will spend down to 0 to stock mail seeds). Runs even with Auto Plant = false. (If a seed is ALSO in Plant Plan / Only Plant it STILL gets planted too — plant intent wins.)
@@ -70,7 +70,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Show Console"]          = false,    -- toggle. the left/right buy + shovel/plant feed panels (toggle live with the CONSOLE button)
         ["Smart Travel"]          = true,     -- toggle. teleport to the nearest hub then walk the short rest
         ["Auto Daily Deal"]       = true,     -- toggle. sell one backpack a day at the 5x Daily Deal
-        ["Walk Speed"]            = 0,        -- number: 0 or 16..35. fallback walk speed. 0 = use the GAME's own walk speed (no override)
+        ["Walk Speed"]            = 30,        -- number: 0 or 16..35. fallback walk speed. 0 = use the GAME's own walk speed (no override)
         ["Slide Speed"]           = 30,       -- number 10..150. noclip SLIDE speed for Fast Travel. higher = faster but nearer the ~180/s anti-cheat ceiling
         ["Fast Travel"]           = true,    -- toggle. on = noclip-slide travel (same speed at any fps); off = plain walking
         ["Teleport"]              = true,     -- toggle. on = grab pets + event seeds by teleporting straight onto each. separate from Fast Travel
@@ -94,7 +94,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Max Tries"]  = 10,                   -- number: how hard to fight for a lot — re-fires the buy at the max ~5/sec rate up to this many times, stopping the instant it confirms. higher = more persistent on a contested lot.
     },
     ["Eggs"] = {
-        ["Auto Open"] = false,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
+        ["Auto Open"] = true,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
         ["Open"]      = {                     -- LIST of egg names to open (loose, case-insensitive). {} = open nothing. { "all" } = open EVERY egg you get. e.g.:
             "Common Egg", "Uncommon Egg",
         },

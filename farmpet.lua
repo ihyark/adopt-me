@@ -19,7 +19,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Plant Limit"] = 700,                  -- number (0 = off). cap TOTAL plants at this; if already over, shovel lowest-tier DOWN to it (cuts lag). Set ~200. Never shovels mutated/Mega/Plant-Plan/never-sell.
         ["Never Shovel"] = { "Bamboo", "Mushroom" },                -- LIST of crop names the Plant-Limit shovel must NEVER touch (your high-tier crops). e.g. { "Dragon Fruit", "Mango" }
         ["Shovel Up To"] = "Rare",                -- text choice (a rarity TIER): "" / "Common" / "Uncommon" / "Rare" / "Epic". removes only that tier & below; Legendary+ always safe.
-        ["Buy Seeds"]    = { ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- MAP seed = number. buy & HOLD N of each for MAILING (not planted). EACH SEED NEEDS A NUMBER -> just "Dragon's Breath" is WRONG. e.g. { ["Bamboo"] = 500, ["Dragon's Breath"] = 10 }. Any SHOP seed (incl. Moon Bloom / Dragon's Breath when stocked); Gold/Rainbow/Mega can't be bought. Buys ANYTHING in stock it can afford, cheapest first — IGNORES Keep Cash (will spend down to 0 to stock mail seeds). Runs even with Auto Plant = false. (If a seed is ALSO in Plant Plan / Only Plant it STILL gets planted too — plant intent wins.)
+        ["Buy Seeds"]    = { ["Star Fruit"] = 1, ["Sun Bloom"] = 1, ["Dragon's Breath"] = 1, ["Moon Bloom"] = 1, ["Hypno Bloom"] = 1 },                -- MAP seed = number. buy & HOLD N of each for MAILING (not planted). EACH SEED NEEDS A NUMBER -> just "Dragon's Breath" is WRONG. e.g. { ["Bamboo"] = 500, ["Dragon's Breath"] = 10 }. Any SHOP seed (incl. Moon Bloom / Dragon's Breath when stocked); Gold/Rainbow/Mega can't be bought. Buys ANYTHING in stock it can afford, cheapest first — IGNORES Keep Cash (will spend down to 0 to stock mail seeds). Runs even with Auto Plant = false. (If a seed is ALSO in Plant Plan / Only Plant it STILL gets planted too — plant intent wins.)
     },
     ["Money"] = {
         ["Keep Cash"]          = 15000,    -- number. always keep at least this much money
@@ -58,7 +58,7 @@ _G.GAGConfig = _G.GAGConfig or {
                                               --   routing: the first listed name in THIS server -> GIFT it (instant, server-wide, no mail limit); if NONE are in-server -> MAIL the first name (works cross-server).
         ["Send Every"] = 0,                   -- number (MINUTES) between sends. 0 = default ~45s. (send INTERVAL only — not the per-item Count)
         ["Send"]       = {                    -- LIST: bare "Name" = send the WHOLE stack; { Item = "Name", Count = N } = wait until you hold N, then send N. equipped pets never sent. e.g. { "Gold", { Item = "Carrot", Count = 100 } }
-            "Moon Bloom", "Dragon's Breath", "Rainbow", "Mega", "Ghost Pepper", "Hypno Bloom",
+            "Moon Bloom", "Dragon's Breath", "Rainbow", "Mega", "Ghost Pepper", "Hypno Bloom", "Sun Bloom", "Star Fruit"
             "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent", 
             "Super Sprinkler", "Super Watering Can",
         },

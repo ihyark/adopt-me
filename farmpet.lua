@@ -9,7 +9,7 @@ _G.GAGConfig = _G.GAGConfig or {
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- toggle. false = DON'T farm (no planting/expand/replace, no plot seed-buying). "Buy Seeds" + Mail still run -> a pure mail-stocking bot
-        ["Plant Plan"]  = { ["Fire Fern"] = 5, ["Poison Apple"] = 5, ["Poison Ivy"] = 5, ["Pomegranate"] = 5, ["Venom Spitter"] = 5, ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 400, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
+        ["Plant Plan"]  = { ["Fire Fern"] = 5, ["Poison Apple"] = 5, ["Poison Ivy"] = 5, ["Pomegranate"] = 5, ["Venom Spitter"] = 5, ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 10, ["Strawberry"] = 10, ["Blueberry"] = 10, ["Carrot"] = 10, ["Bamboo"] = 450, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
         ["Only Plant"]  = { "Fire Fern", "Poison Apple", "Poison Ivy", "Pomegranate", "Venom Spitter", "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
         ["Minimum Seed"] = "Bamboo",          -- text: ONE seed name. never buy/plant a seed cheaper than this tier (stops Carrot/Strawberry junk). "" = no floor. e.g. "Bamboo"
         ["Layout"]      = "compact",          -- text choice: "compact" (tight — best sprinkler coverage) or "spread"
@@ -58,7 +58,7 @@ _G.GAGConfig = _G.GAGConfig or {
                                               --   routing: the first listed name in THIS server -> GIFT it (instant, server-wide, no mail limit); if NONE are in-server -> MAIL the first name (works cross-server).
         ["Send Every"] = 0,                   -- number (MINUTES) between sends. 0 = default ~45s. (send INTERVAL only — not the per-item Count)
         ["Send"]       = {                    -- LIST: bare "Name" = send the WHOLE stack; { Item = "Name", Count = N } = wait until you hold N, then send N. equipped pets never sent. e.g. { "Gold", { Item = "Carrot", Count = 100 } }
-            "Moon Bloom", "Dragon's Breath", "Rainbow", "Mega", "Ghost Pepper", "Hypno Bloom", "Sun Bloom", "Star Fruit"
+            "Moon Bloom", "Dragon's Breath", "Rainbow", "Mega", "Ghost Pepper", "Hypno Bloom", "Sun Bloom", "Star Fruit",
             "GoldenDragonfly", "Unicorn", "Raccoon", "BlackDragon", "IceSerpent", 
             "Super Sprinkler", "Super Watering Can",
         },
@@ -70,7 +70,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Show Console"]          = false,    -- toggle. the left/right buy + shovel/plant feed panels (toggle live with the CONSOLE button)
         ["Smart Travel"]          = true,     -- toggle. teleport to the nearest hub then walk the short rest
         ["Auto Daily Deal"]       = true,     -- toggle. sell one backpack a day at the 5x Daily Deal
-        ["Walk Speed"]            = 30,        -- number: 0 or 16..35. fallback walk speed. 0 = use the GAME's own walk speed (no override)
+        ["Walk Speed"]            = 16,        -- number: 0 or 16..35. fallback walk speed. 0 = use the GAME's own walk speed (no override)
         ["Slide Speed"]           = 30,       -- number 10..150. noclip SLIDE speed for Fast Travel. higher = faster but nearer the ~180/s anti-cheat ceiling
         ["Fast Travel"]           = true,    -- toggle. on = noclip-slide travel (same speed at any fps); off = plain walking
         ["Teleport"]              = true,     -- toggle. on = grab pets + event seeds by teleporting straight onto each. separate from Fast Travel
@@ -94,7 +94,7 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Max Tries"]  = 10,                   -- number: how hard to fight for a lot — re-fires the buy at the max ~5/sec rate up to this many times, stopping the instant it confirms. higher = more persistent on a contested lot.
     },
     ["Eggs"] = {
-        ["Auto Open"] = true,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
+        ["Auto Open"] = false,                -- toggle. auto-HATCH eggs from your inventory into pets (fire-and-forget; the game finalizes each hatch)
         ["Open"]      = {                     -- LIST of egg names to open (loose, case-insensitive). {} = open nothing. { "all" } = open EVERY egg you get. e.g.:
             "Common Egg", "Uncommon Egg",
         },

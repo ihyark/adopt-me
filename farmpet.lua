@@ -5,12 +5,12 @@ _G.GAGConfig = _G.GAGConfig or {
         ["Sell Every"]    = 30,               -- number (seconds). also sell every N sec while holding fruit; 0 = off
         ["Only Harvest"]  = {},               -- LIST of crop names (empty = harvest everything). e.g. { "Watermelon", "Dragon Fruit" }
         ["Don't Harvest"] = {},               -- LIST of crop names = never harvest these. e.g. { "Carrot", "Green Bean" }
-        ["Wait For Mutation"] = { "Bamboo", "Mushroom" },   -- LIST of crop names. don't harvest these until they get ANY mutation (wait for a weather event); also kept from the shovel while waiting. e.g. { "Bamboo", "Mushroom" }
+        ["Wait For Mutation"] = { "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Sun Bloom" },   -- LIST of crop names. don't harvest these until they get ANY mutation (wait for a weather event); also kept from the shovel while waiting. e.g. { "Bamboo", "Mushroom" }
     },
     ["Planting"] = {
         ["Auto Plant"]  = true,               -- toggle. false = DON'T farm (no planting/expand/replace, no plot seed-buying). "Buy Seeds" + Mail still run -> a pure mail-stocking bot
-        ["Plant Plan"]  = { ["Sunflower"] = 10, ["Dragon Fruit"] = 10, ["Cherry"] = 10, ["Fire Fern"] = 5, ["Poison Apple"] = 5, ["Poison Ivy"] = 5, ["Pomegranate"] = 5, ["Venom Spitter"] = 5, ["Green Bean"] = 20, ["Gold"] = 150, ["Tomato"] = 25, ["Strawberry"] = 25, ["Blueberry"] = 20, ["Carrot"] = 15, ["Bamboo"] = 450, ["Mushroom"] = 100 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
-        ["Only Plant"]  = { "Dragon Fruit", "Cherry", "Sunflower", "Fire Fern", "Poison Apple", "Poison Ivy", "Pomegranate", "Venom Spitter", "Carrot", "Gold", "Strawberry", "Bamboo", "Mushroom", "Green Bean", "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Tomato", "Blueberry" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
+        ["Plant Plan"]  = { ["Dragon's Breath"] = 15, ["Sun Bloom"] = 5, ["Moon Bloom"] = 5, ["Hypno Bloom"] = 5 },                 -- MAP crop = number. keep N of each planted, then auto-fill the rest. EACH crop needs a number. e.g. { Apple = 50, ["Dragon Fruit"] = 20 }
+        ["Only Plant"]  = { "Dragon's Breath", "Moon Bloom", "Hypno Bloom", "Sun Bloom" },                 -- LIST of crop names = plant ONLY these (empty = plant anything). e.g. { "Bamboo", "Dragon Fruit" }
         ["Minimum Seed"] = "Bamboo",          -- text: ONE seed name. never buy/plant a seed cheaper than this tier (stops Carrot/Strawberry junk). "" = no floor. e.g. "Bamboo"
         ["Layout"]      = "compact",          -- text choice: "compact" (tight — best sprinkler coverage) or "spread"
         ["Don't Plant"] = { "Mega", "Rainbow" },                 -- LIST of crop names = never plant these (also blocks BUYING them). e.g. { "Carrot", "Green Bean" }

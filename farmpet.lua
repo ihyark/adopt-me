@@ -1,7 +1,7 @@
 _G.GAGConfig = _G.GAGConfig or {
     ["Harvest"] = {
         ["Auto Harvest"]  = true,             -- toggle. false = never harvest OR sell
-        ["Sell At"]       = 10,               -- number. sell once the backpack holds about this many fruit
+        ["Sell At"]       = 1,               -- number. sell once the backpack holds about this many fruit
         ["Sell Every"]    = 30,               -- number (seconds). also sell every N sec while holding fruit; 0 = off
         ["Only Harvest"]  = {},               -- LIST of crop names (empty = harvest everything). e.g. { "Watermelon", "Dragon Fruit" }
         ["Don't Harvest"] = {},               -- LIST of crop names = never harvest these. e.g. { "Carrot", "Green Bean" }

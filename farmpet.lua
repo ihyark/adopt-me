@@ -11,7 +11,7 @@ getgenv().VO_CONFIG = {
     KeepPetFarm = false, -- If true, will switch back when PetFarmList targets appear
     EggName = {"Cracked Egg"},  -- Priority order: first egg tried, then second, etc.
     PetFarmList = {}, -- Ordered pet names: age all non-FG of first name, then second, etc.; fallback if none available
-    PrioritizePet = "",
+    PrioritizePet = "2D Kitty",
 
     -- === PET PEN ===
     PetPen = false,

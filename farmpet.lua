@@ -14,8 +14,8 @@ getgenv().VO_CONFIG = {
     PrioritizePet = "2D Kitty",
 
     -- === PET PEN ===
-    PetPen = false,
-    CustomPenEggs = {},
+    PetPen = true,
+    CustomPenEggs = {"Cracked Egg"},
     CustomPenPets = {},
     PrioritizePetPenTypes = {},  -- "Egg", "Normal", "Neon" (empty = all)
 

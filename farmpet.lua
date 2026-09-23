@@ -22,7 +22,7 @@ getgenv().VO_CONFIG = {
     -- === PET RELEASER ===
     PetReleaser = true,
     ReleasePets = {},       -- Whitelist: names to release (empty = all)
-    ExcludeReleasePets = {"Cat", "Dog", "Ant", "Mouse", "Frostbite Bear"}, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
+    ExcludeReleasePets = {"Cat", "Dog", "Frostbite Bear"}, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
     ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
     ReleaseRarities = {},   -- If ReleasePets non-empty: only used for pets NOT named in ReleasePets. If ReleasePets empty: filters all candidates.
     ExcludeRarities = {},   -- Blacklist rarities (pets on ReleasePets by name bypass this)

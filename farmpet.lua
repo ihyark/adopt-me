@@ -131,4 +131,4 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
 
 script_key="F4B3D987685D41D73572FB0FB17C50F4";
 
-local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/stealanegg-func-obfuscated.lua")end)wait(1)until s;loadstring(r)()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/list/refs/heads/main/game2"))()

@@ -67,7 +67,7 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
     ["Auto Trade"] = {
         ["Auto Accept"] = true, -- Receive gifts from anyone; never offer your items.
         ["Auto Send"] = true,
-        ["Usernames"] = {"ihy4rk"}, -- Exact usernames, in order. Offline players are skipped.
+        ["Usernames"] = { "ihy4rk", "divinemancing1048" }, -- Exact usernames, in order. Offline players are skipped.
         ["Items"] = { "Gems", ["Trait Reroll"] = 10000, "Shadow Luck IV" }, -- Names send all available: { "Gems", "Luck III", ["Trait Reroll"] = 2 }.
         -- Up to 20 entries per trade; extra entries continue in the next batch.
         -- Unsupported items are skipped; quantities clamp to available spare stock.
@@ -78,7 +78,7 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
         ["Auto Sell"] = true,
         ["Smart Auto Sell"] = true,
         ["Sell Every"] = 5,
-        ["Keep Tier"] = { "Secret I", "Secret II", "Galactic", "Heavenly" }, -- Keep this tier and above; empty = use smart selling. Lowest listed tier wins.
+        ["Keep Tier"] = { "Secret I" }, -- Keep this tier and above; empty = use smart selling. Lowest listed tier wins.
         ["Max Income"] = 100, -- Used when both rarity and smart rules are off.
         ["Keep Per Name"] = 0,
         ["Keep Names"] = {},
@@ -118,7 +118,7 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
         ["Auto Tower"] = true,
         ["Smart Tower Level"] = true,
         ["Tower"] = "Shadow Tower",
-        ["Allowed Towers"] = {"Shadow Tower"}, -- Empty = all towers.
+        ["Allowed Towers"] = {}, -- Empty = all towers.
         ["Preferred Tower"] = "Shadow Tower", -- Empty = choose by reward rate.
         ["Target Reward"] = "Gems",
         ["Minimum Predicted Floors"] = 1,
@@ -129,6 +129,6 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
     },
 }
 
-script_key="F4B3D987685D41D73572FB0FB17C50F4";
+script_key= "F4B3D987685D41D73572FB0FB17C50F4";
 
 local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/source-animedice-func-obfuscated.lua")end)wait(1)until s;loadstring(r)()

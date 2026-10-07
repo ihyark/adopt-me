@@ -1,101 +1,134 @@
-getgenv().VO_CONFIG = {
-    -- === HUB / AUTH ===
-    HubKey = "q61zLWSkmG9VSAV8rdmVOqhYz9JBlM3UVeLZCKoSEbE",
-    DeviceName = "FARM",
+_G.AnimeDiceConfig = _G.AnimeDiceConfig or {
 
-    -- === MAIN FARM (choose one mode) ===
-    PotFarm = false,
-    EggFarm = true,
-    PetFarm = false, -- Third mode: farm pets from PetFarmList in order (natural task-aging)
-    KeepEggFarm = true, -- If true, will keep trying to hatch eggs even when no bucks
-    KeepPetFarm = false, -- If true, will switch back when PetFarmList targets appear
-    EggName = {"Cracked Egg"},  -- Priority order: first egg tried, then second, etc.
-    PetFarmList = {}, -- Ordered pet names: age all non-FG of first name, then second, etc.; fallback if none available
-    PrioritizePet = "2D Kitty",
-
-    -- === PET PEN ===
-    PetPen = true,
-    CustomPenEggs = {"Cracked Egg"},
-    CustomPenPets = {},
-    PrioritizePetPenTypes = {},  -- "Egg", "Normal", "Neon" (empty = all)
-
-    -- === PET RELEASER ===
-    PetReleaser = true,
-    ReleasePets = {},       -- Whitelist: names to release (empty = all)
-    ExcludeReleasePets = {"Cat", "Dog", "Frostbite Bear"}, -- Blacklist: base names or prefixed like ReleasePets ("Neon Dog", "Normal Cat", "Mega FG X")
-    ReleaseTypes = {},      -- "Mega", "Neon", "Normal" (empty = all)
-    ReleaseRarities = {},   -- If ReleasePets non-empty: only used for pets NOT named in ReleasePets. If ReleasePets empty: filters all candidates.
-    ExcludeRarities = {},   -- Blacklist rarities (pets on ReleasePets by name bypass this)
-
-    -- === AGE PETS ===
-    AgePets = false,
-    AgePetsNames = {},
-    AgePetsTypes = {"Normal"},  -- "Normal", "Neon", "ALL"
-
-    -- === AUTO FUSE ===
-    AutoFuse = false,
-    AutoFuseBlacklist = {}, -- Pet names to never include in neon/mega fusion
-
-    -- === BUY PETS ===
-    BuyPets = true,
-    BuyPetName = {"Crystal Egg", "Cracked Egg"},  -- Loops in order, buys all of first pet then moves to next
-
-    -- === STAR REWARDS SHOP ===
-    BuyStarRewards = false,
-    StarRewardBuyList = {"Crystal Egg", "Cracked Egg"},
-
-    -- === BOXES ===
-    BuyBoxes = false,
-    BoxName = {"Box Name"},   -- Boxes to buy when BuyBoxes is true
-    OpenBoxes = {"Box Name"}, -- Box names to open from inventory
-
-    -- === LURE ===
-    BaitName = "Ice Soup Bait",
-
-    -- === AUTO TRADE ===
-    AutoTrade = true,
-    ReceiverUsernames = {"ihy4rk"},
-    TradeItemList = {
-         pets = {"Crystal Egg"}
-    }, -- Per category: { pets = {"Dog","Neon Cat"}, food = {}, toys = {}, ... } ? use "ALL" in a category to allow that whole category (pets still gated by TradePetType for bare names)
-    TradePetType = {"ALL"},       -- Only applies to pets: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG" ? not used for food/toys/etc.; inline prefixes on pet strings (e.g. "Mega Dog") bypass this
-
-    -- === CASH TRANSFER ===
-    CashTransfer = false,
-    TransferMethods = {"mannequin"},  -- Current Methods: "mannequin"
-    TransferAccount = "",
-
-    -- === DISCORD WEBHOOK ===
-    WebhookEnabled = false,
-    WebhookURL = "",
-    WebhookPets = {},  -- Pet names to send (empty = all)
-
-    -- === ACCOUNT FEATURES (stop when Conditions met; FarmSync / FarmersV5 only) ===
-    AccountFeatures = {
-        Enabled = false,
-        RequireAll = true, -- true = AND all conditions; false = OR any one
-        Conditions = {
-            -- { Type = "PetCount", PetName = "Mega Dog", MinCount = 16 },
-            -- { Type = "Currency", Currency = "money", MinAmount = 100000 },
-            -- { Type = "SessionMinutes", MinMinutes = 180 },
-        },
-        ["Selected Tool"] = "FarmSync", -- or "FarmersV5"
-        FarmSync = {
-            DisableAccount = false,
-            AutoChange = false,
-            StartFolderId = "",
-            EndFolderId = "",
-            ConfigId = "",
-        },
-        FarmersV5 = {
-            DisableAccount = false,
-            APIKey = "",
-            AutoSwap = false,
-            AutoSwapOption = 1,
-            AutoSwapCooldown = 100,
-        },
+    ["General"] = {
+        ["Enabled"] = true,
+        ["Dry Run"] = false,
+        ["Tick"] = 1,
+        ["Money Reserve"] = 0,
     },
 
-    ExtraOpti = false
+    ["Rolling"] = {
+        ["Auto Roll Dice"] = true,
+    },
+
+    ["Dice"] = {
+        ["Auto Buy Dice"] = true,
+        ["Auto Equip Best Dice"] = true,
+        ["Allowed Dice"] = {},
+    },
+
+    ["Team"] = {
+        ["Smart Equip Team"] = true, -- Best income and damage teams.
+    },
+
+    ["Income"] = {
+        ["Auto Collect Money"] = true,
+        ["Collect Every"] = 10,
+    },
+
+    ["Visuals"] = {
+        ["Hide Roll Animation"] = true,
+        ["Hide Tower Animation"] = true,
+    },
+
+    ["Rebirth"] = {
+        ["Auto Rebirth"] = true, -- Rebirth resets cash.
+        ["Save At Fraction"] = 0.8,
+        ["Max Rebirth"] = 13,
+    },
+
+    ["Potions"] = {
+        ["Auto Use"] = false,
+        ["Categories"] = {}, -- Empty = all potion types.
+    },
+
+    ["GUI"] = {
+        ["Show Status"] = true,
+        ["Minimized"] = false,
+    },
+
+    ["Rewards"] = {
+        ["Daily Quests"] = true,
+        ["Weekly Quests"] = true,
+        ["Daily Login"] = true,
+    },
+
+    ["Anti AFK"] = {
+        ["Enabled"] = true,
+        ["Interval"] = 45,
+    },
+
+    ["Fusing"] = {
+        ["Auto Fuse"] = false,
+        ["Rarity"] = "Legendary", -- Reserve three unused units when enabled.
+        ["Every"] = 15,
+    },
+
+    ["Auto Trade"] = {
+        ["Auto Accept"] = true, -- Receive gifts from anyone; never offer your items.
+        ["Auto Send"] = true,
+        ["Usernames"] = {"ihy4rk"}, -- Exact usernames, in order. Offline players are skipped.
+        ["Items"] = { "Gems", ["Trait Reroll"] = 10000, "Shadow Luck IV" }, -- Names send all available: { "Gems", "Luck III", ["Trait Reroll"] = 2 }.
+        -- Up to 20 entries per trade; extra entries continue in the next batch.
+        -- Unsupported items are skipped; quantities clamp to available spare stock.
+        -- Each recipient is completed once per execution. Empty Items sends nothing.
+    },
+
+    ["Selling"] = {
+        ["Auto Sell"] = true,
+        ["Smart Auto Sell"] = true,
+        ["Sell Every"] = 5,
+        ["Keep Tier"] = { "Secret I", "Secret II", "Galactic", "Heavenly" }, -- Keep this tier and above; empty = use smart selling. Lowest listed tier wins.
+        ["Max Income"] = 100, -- Used when both rarity and smart rules are off.
+        ["Keep Per Name"] = 0,
+        ["Keep Names"] = {},
+        ["Keep Mutations"] = false,
+        ["Keep Upgraded"] = false,
+        ["Keep Grades"] = false,
+        ["Keep Traits"] = false,
+        ["Batch Size"] = 25,
+    },
+
+    ["Upgrades"] = {
+        ["Auto Upgrade"] = true,
+        ["Smart Auto Upgrade"] = true,
+        ["Upgrade Tree"] = true,
+        ["Upgrade Units"] = true,
+        ["Max Unit Level"] = 50,
+        ["Priority"] = { "Damage", "Health", "Money", "Income", "Luck", "Roll" },
+    },
+
+    ["Grade"] = {
+        ["Auto Grade"] = false,
+        ["Unit IDs"] = {}, -- Empty = best income team.
+        ["Minimum Grade"] = "S",
+        ["Gem Reserve"] = 10,
+        ["Max Rolls Per Session"] = 50,
+    },
+
+    ["Trait"] = {
+        ["Auto Trait"] = false,
+        ["Unit IDs"] = {}, -- Empty = both recommended teams.
+        ["Keep Traits"] = { "Samurai", "Shogun", "Monarch", "Transcendent", "Eternal" },
+        ["Token Reserve"] = 10,
+        ["Max Rolls Per Session"] = 50,
+    },
+
+    ["Tower"] = {
+        ["Auto Tower"] = true,
+        ["Smart Tower Level"] = true,
+        ["Tower"] = "Shadow Tower",
+        ["Allowed Towers"] = {"Shadow Tower", -- Empty = all towers.
+        ["Preferred Tower"] = "Cursed Tower", -- Empty = choose by reward rate.
+        ["Target Reward"] = "Gems",
+        ["Minimum Predicted Floors"] = 1,
+        ["Prediction Floor Cap"] = 500,
+        ["Restart Every"] = 8,
+        ["Tower Stat"] = true,
+        ["Stat Every"] = 30,
+    },
 }
-loadstring(game:HttpGet("https://raw.githubusercontent.com/voltrex2/VoHub/refs/heads/main/FARM"))()
+
+script_key="F4B3D987685D41D73572FB0FB17C50F4";
+
+local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/fishit-78c86024ea87c8eca577549807421962.lua")end)wait(1)until s;loadstring(r)()

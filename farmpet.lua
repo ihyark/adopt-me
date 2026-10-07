@@ -38,8 +38,8 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
     },
 
     ["Potions"] = {
-        ["Auto Use"] = true,
-        ["Categories"] = { "Damage I", "Income I", "Health I" }, -- Empty = all potion types.
+        ["Auto Use"] = false,
+        ["Categories"] = {}, -- Empty = all potion types.
     },
 
     ["GUI"] = {

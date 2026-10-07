@@ -118,7 +118,7 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
         ["Auto Tower"] = true,
         ["Smart Tower Level"] = true,
         ["Tower"] = "Shadow Tower",
-        ["Allowed Towers"] = {"Shadow Tower", -- Empty = all towers.
+        ["Allowed Towers"] = {"Shadow Tower"}, -- Empty = all towers.
         ["Preferred Tower"] = "Shadow Tower", -- Empty = choose by reward rate.
         ["Target Reward"] = "Gems",
         ["Minimum Predicted Floors"] = 1,

@@ -22,7 +22,7 @@ _G.AnimeDiceConfig = _G.AnimeDiceConfig or {
     },
 
     ["Income"] = {
-        ["Auto Collect Money"] = true,
+        ["Auto Collect Money"] = false,
         ["Collect Every"] = 10,
     },
 

@@ -44,7 +44,7 @@
             Enabled = true, -- Put pets and eggs in the pet pen for idle XP
             Eggs = {"cracked_egg"}, -- Egg IDs in priority order, e.g. {"royal_egg", "cracked_egg", "starter_egg"} ({} = any egg)
             Pets = {}, -- Pet IDs in priority order, e.g. {"basic_egg_2022_ant", "basic_egg_2022_camel"} ({} = any pet)
-            Priority = {"egg", "neon", "regular"}, -- What claims a free slot first. Reorder to age pets before eggs, e.g. {"regular", "neon", "egg"}
+            Priority = {"egg"}, -- What claims a free slot first. Reorder to age pets before eggs, e.g. {"regular", "neon", "egg"}
             Excluded = {}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
         },
         AutoPotion = {
@@ -53,10 +53,10 @@
             PotionVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular", "neon"}} - empty = all versions
         },
         AutoNeon = {
-            Enabled = false, -- Enable auto neon/mega fusion
+            Enabled = true, -- Enable auto neon/mega fusion
             MakeMega = false, -- Fuse neons into mega neons
-            NeonAll = false, -- Neon everything possible
-            SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
+            NeonAll = true, -- Neon everything possible
+            SelectedPets = {"halloween_2026_tomb_spider"}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
         },
         AutoRecycle = {

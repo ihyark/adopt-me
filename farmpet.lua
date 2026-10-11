@@ -67,19 +67,19 @@
                 -- If a rarity is not listed or empty, pets of that rarity will NOT be recycled
                 -- If a rarity has versions listed, ONLY those versions will be recycled
 
-                -- common = {"regular", "neon", "mega"},  -- Recycle all common versions
-                -- uncommon = {"neon", "mega"},                    -- Only recycle neon uncommons
-                -- rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
-                -- ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                -- legendary = {"mega"},                   -- Only recycle mega legendaries
-            },
+                common = {"regular", "neon", "mega"},  -- Recycle all common versions
+                uncommon = {"regular", "neon", "mega"},                    -- Only recycle neon uncommons
+                rare = {"neon", "mega"},     -- Recycle all rare versions
+                ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
+                legendary = {"mega"},                   -- Only recycle mega legendaries
+            }, 
             Pets = {}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
                        -- Add :version and/or :age:N to narrow it down (1 = Newborn, 6 = Full Grown)
                        -- e.g. {"basic_egg_2022_corgi:regular", "basic_egg_2022_ant:age:1", "basic_egg_2022_camel:neon:age:6"}
             Keep = {}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)
-            Excluded = {"cat", "dog", "ice_dimension_2025_frostbite_bear", "halloween_2026_tomb_spider", "halloween_2026_bubblegeist", "halloween_2026_skelicorn"}, -- Never recycle these, e.g. {"shadow_dragon", "basic_egg_2022_alicorn"}
+            Excluded = {"cat", "dog", "ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn"}, -- Never recycle these, e.g. {"shadow_dragon", "basic_egg_2022_alicorn"}
                            -- Also accepts :version and :age:N, e.g. {"basic_egg_2022_corgi:neon", "basic_egg_2022_ant:age:6"}
-        },
+        }, 
         AutoTrade = {
             Enabled = true, -- Enable auto trading
             AutoAcceptTrades = true, -- Accept incoming trade requests

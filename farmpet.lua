@@ -69,11 +69,11 @@
 
                 common = {"regular", "neon", "mega"},  -- Recycle all common versions
                 uncommon = {"regular", "neon", "mega"},                    -- Only recycle neon uncommons
-                rare = {"neon", "mega"},     -- Recycle all rare versions
+                rare = {"regular", "neon", "mega"},     -- Recycle all rare versions
                 ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
-                legendary = {"mega"},                   -- Only recycle mega legendaries
+                legendary = {"regular", "neon", "mega"},                   -- Only recycle mega legendaries
             }, 
-            Pets = {}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
+            Pets = {"basic_egg_2022_mouse", "basic_egg_2022_ant", "halloween_2026_tomb_spider:neon:age:1"}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
                        -- Add :version and/or :age:N to narrow it down (1 = Newborn, 6 = Full Grown)
                        -- e.g. {"basic_egg_2022_corgi:regular", "basic_egg_2022_ant:age:1", "basic_egg_2022_camel:neon:age:6"}
             Keep = {}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)

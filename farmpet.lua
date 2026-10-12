@@ -8,7 +8,7 @@
             AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
             ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = true, -- Reduce graphics quality to minimum
-            FPSCap = 10, -- FPS cap option (0 = uncapped)
+            FPSCap = 5, -- FPS cap option (0 = uncapped)
             LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
             TradeInvites = "Everyone", -- "Everyone" or "Friends"
         },
@@ -45,7 +45,7 @@
             Eggs = {"cracked_egg"}, -- Egg IDs in priority order, e.g. {"royal_egg", "cracked_egg", "starter_egg"} ({} = any egg)
             Pets = {}, -- Pet IDs in priority order, e.g. {"basic_egg_2022_ant", "basic_egg_2022_camel"} ({} = any pet)
             Priority = {"egg"}, -- What claims a free slot first. Reorder to age pets before eggs, e.g. {"regular", "neon", "egg"}
-            Excluded = {"pet_recycler_2025_crystal_egg"}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
+            Excluded = {"pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_egg"}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -76,7 +76,7 @@
             Pets = {"basic_egg_2022_mouse", "basic_egg_2022_ant", "halloween_2026_tomb_spider:neon:age:1"}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
                        -- Add :version and/or :age:N to narrow it down (1 = Newborn, 6 = Full Grown)
                        -- e.g. {"basic_egg_2022_corgi:regular", "basic_egg_2022_ant:age:1", "basic_egg_2022_camel:neon:age:6"}
-            Keep = {}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)
+            Keep = {"halloween_2026_tomb_spider = 4"}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)
             Excluded = {"cat", "dog", "ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn"}, -- Never recycle these, e.g. {"shadow_dragon", "basic_egg_2022_alicorn"}
                            -- Also accepts :version and :age:N, e.g. {"basic_egg_2022_corgi:neon", "basic_egg_2022_ant:age:6"}
         }, 
@@ -87,7 +87,7 @@
             Usernames = {"ihy4rk"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_tomb_spider", "halloween_2026_bubblegeist", "halloween_2026_skelicorn"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters

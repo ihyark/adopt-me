@@ -23,8 +23,8 @@
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
-            SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
-            SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
+            SelectiveFarm = true, -- If true, only farm pets in SelectedPetTypes list
+            SelectedPetTypes = {"halloween_2026_tomb_spider", "2d_tuesdays_2025_2d_kitty"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         EventFarm = {
             Halloween = {
@@ -53,10 +53,10 @@
             PotionVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular", "neon"}} - empty = all versions
         },
         AutoNeon = {
-            Enabled = true, -- Enable auto neon/mega fusion
+            Enabled = false, -- Enable auto neon/mega fusion
             MakeMega = false, -- Fuse neons into mega neons
-            NeonAll = true, -- Neon everything possible
-            SelectedPets = {"halloween_2026_tomb_spider"}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
+            NeonAll = false, -- Neon everything possible
+            SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
         },
         AutoRecycle = {
@@ -73,11 +73,11 @@
                 ultra_rare = {"regular", "neon", "mega"}, -- Recycle all ultra rare versions
                 legendary = {"regular", "neon", "mega"},                   -- Only recycle mega legendaries
             }, 
-            Pets = {"basic_egg_2022_mouse", "basic_egg_2022_ant", "halloween_2026_tomb_spider:neon:age:1"}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
+            Pets = {"basic_egg_2022_mouse", "basic_egg_2022_ant"}, -- Specific pet IDs to always recycle regardless of RarityFilter, e.g. {"basic_egg_2022_ant", "basic_egg_2022_mouse"}
                        -- Add :version and/or :age:N to narrow it down (1 = Newborn, 6 = Full Grown)
                        -- e.g. {"basic_egg_2022_corgi:regular", "basic_egg_2022_ant:age:1", "basic_egg_2022_camel:neon:age:6"}
-            Keep = {"halloween_2026_tomb_spider = 4"}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)
-            Excluded = {"cat", "dog", "ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn"}, -- Never recycle these, e.g. {"shadow_dragon", "basic_egg_2022_alicorn"}
+            Keep = {}, -- Keep this many of a pet and recycle the rest, e.g. {basic_egg_2022_ant = 4, basic_egg_2022_camel = 4} (4 each = enough for a neon)
+            Excluded = {"cat", "dog", "ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "halloween_2026_tomb_spider"}, -- Never recycle these, e.g. {"shadow_dragon", "basic_egg_2022_alicorn"}
                            -- Also accepts :version and :age:N, e.g. {"basic_egg_2022_corgi:neon", "basic_egg_2022_ant:age:6"}
         }, 
         AutoTrade = {
@@ -87,7 +87,7 @@
             Usernames = {"XzTitanEBChaosnzX177", "DeltaAcSurge81868", "MagicF1Mirages165776", "XzSurgeWZScytheTzX15", "XzPixelpFOrbituFPuls"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg", "halloween_2026_tomb_spider"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters

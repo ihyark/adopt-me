@@ -84,7 +84,7 @@
             Enabled = true, -- Enable auto trading
             AutoAcceptTrades = true, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {"ihy4rk"}, -- Players to send trades to (e.g. {"player1", "player2"})
+            Usernames = {"XzTitanEBChaosnzX177", "DeltaAcSurge81868", "MagicF1Mirages165776", "XzSurgeWZScytheTzX15", "XzPixelpFOrbituFPuls"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
             Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})

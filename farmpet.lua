@@ -1,7 +1,7 @@
    getgenv().Config = {
         Dashboard = {
-            Enabled = true,       -- Send stats to dashboard
-            SyncConfig = true,    -- Accept config pushes from dashboard
+            Enabled = false,       -- Send stats to dashboard
+            SyncConfig = false,    -- Accept config pushes from dashboard
             GroupName = "FARM",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         Settings = {
@@ -43,7 +43,7 @@
         PetPen = {
             Enabled = true, -- Put pets and eggs in the pet pen for idle XP
             Eggs = {"cracked_egg"}, -- Egg IDs in priority order, e.g. {"royal_egg", "cracked_egg", "starter_egg"} ({} = any egg)
-            Pets = {}, -- Pet IDs in priority order, e.g. {"basic_egg_2022_ant", "basic_egg_2022_camel"} ({} = any pet)
+            Pets = {"halloween_2026_tomb_spider"}, -- Pet IDs in priority order, e.g. {"basic_egg_2022_ant", "basic_egg_2022_camel"} ({} = any pet)
             Priority = {"egg"}, -- What claims a free slot first. Reorder to age pets before eggs, e.g. {"regular", "neon", "egg"}
             Excluded = {"pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_egg"}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
         },
@@ -87,7 +87,7 @@
             Usernames = {"XzTitanEBChaosnzX177", "DeltaAcSurge81868", "MagicF1Mirages165776", "XzSurgeWZScytheTzX15", "XzPixelpFOrbituFPuls"}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg", "halloween_2026_tomb_spider"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            Items = {"ice_dimension_2025_frostbite_bear", "halloween_2026_bubblegeist", "halloween_2026_skelicorn", "admin_abuse_egg_2026_egg", "halloween_2026_tomb_spider", "pet_recycler_2025_crystal_egg"}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
             ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
             GlobalPetFilter = {
                 Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters

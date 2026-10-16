@@ -1,7 +1,7 @@
    getgenv().Config = {
         Dashboard = {
             Enabled = true,       -- Send stats to dashboard
-            SyncConfig = false,    -- Accept config pushes from dashboard
+            SyncConfig = true,    -- Accept config pushes from dashboard
             GroupName = "FARM",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         Settings = {

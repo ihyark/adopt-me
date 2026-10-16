@@ -45,7 +45,7 @@
             Eggs = {"cracked_egg"}, -- Egg IDs in priority order, e.g. {"royal_egg", "cracked_egg", "starter_egg"} ({} = any egg)
             Pets = {}, -- Pet IDs in priority order, e.g. {"basic_egg_2022_ant", "basic_egg_2022_camel"} ({} = any pet)
             Priority = {}, -- What claims a free slot first. Reorder to age pets before eggs, e.g. {"regular", "neon", "egg"}
-            Excluded = {"pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_egg"}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
+            Excluded = {"pet_recycler_2025_crystal_egg", "admin_abuse_egg_2026_egg", "halloween_2026_skelicorn"}, -- Never pen these, e.g. {"shadow_dragon", "lny_2026_fire_foal"}
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up

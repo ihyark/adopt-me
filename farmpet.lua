@@ -8,7 +8,7 @@
             AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
             ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = true, -- Reduce graphics quality to minimum
-            FPSCap = 7, -- FPS cap option (0 = uncapped)
+            FPSCap = 5, -- FPS cap option (0 = uncapped)
             LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
             TradeInvites = "Everyone", -- "Everyone" or "Friends"
         },
@@ -23,8 +23,8 @@
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
-            SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
-            SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
+            SelectiveFarm = true, -- If true, only farm pets in SelectedPetTypes list
+            SelectedPetTypes = {"practice_dog"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         EventFarm = {
             Halloween = {
@@ -34,6 +34,8 @@
                 PigeonNest = true, -- Put Crypt Twigs in the Haunted Hotel nest to unlock the Jacobin Pigeon
                 GhostGallery = true, -- Play the Ghost Gallery minigame every round
                 Hauntlet = true, -- Play the Hauntlet 2 door minigame every round, picking the safest door each room
+                Spotlight = true, -- Play the Spotlight circus minigame every round, collecting candy corn while dodging the spotlights
+                Shoebill = true, -- Give the Shoebill its Lost Socks and Headphones from the Crypt
             },
         },
         TaskExclusion = {
